@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,7 +13,36 @@
 <link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/jssorstyles.css" />
 
+
 </head>
+<style>
+<style>
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+</style>
+
+
+</style>
 <body>
 	<!-- #region Jssor Slider Begin -->
 	<!-- Generator: Jssor Slider Maker -->
@@ -30,177 +60,163 @@ var u=new function(){this.qf=e;this.og=function(b){var a=this.qf;a&&b()}},d={Ib:
 	<header> <!-- Defining the header section of the page with the appropriate tag -->
 
 	<hgroup>
-		<h1>Bikers World!</h1>
-		<h3>Track on Life!!</h3>
-	</hgroup> 
-	
-	<nav class="clear"> 
-	<!-- The nav link semantically marks your main site navigation -->
+	<h1>Bikers World!</h1>
+	<h3>Track on Life!!</h3>
+	</hgroup> <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
 	<ul>
 		<li><a href="moves around here only">moves around here only</a></li>
 		<li><a href="#article1">photoshoot</a></li>
+		<li><a href="#article2">login</a></li>
 		<li><a href="#article2">carousel</a></li>
 		<li><a href="#article3">Navigation menu</a></li>
 		<!-- <li><a href="#article3">Ajax tabs</a></li> -->
-		
-	</ul>	
-		
-		
-	</nav> 
-	</header> 
+
+	</ul>
+
+
+	</nav> </header>
 	
-	<li><a class="active" href="LoginPage">Login</a></li>
-	<li><a href="RegistrationForm">Register</a></li>
-	<li><a href="CategoryPage">Category</a></li>
-		<li><a href="ProductPage">Product</a></li>
-		<li><a href="SupplierPage">Supplier</a></li>
-		<li style="float: right"><a href="logout">Logout</a></li>
 	
+	<p><a href="LoginPage"><img border="0" alt="login" src="resources/images/login.jpg" width="100" height="100"></a></p>
+	<p><a href="RegistrationPage"><img border="0" alt="register" src="resources/images/register.jpg" width="100" height="100"></a></p>
+	<p><a href="productPage"><img border="0" alt="product" src="resources/images/product.jpg" width="100" height="100"></a></p>
+	<p><a href="CategoryPage"><img border="0" alt="category" src="resources/images/category.png" width="100" height="100"></a></p>
+	<p><a href="SupplierPage"><img border="0" alt="supplier" src="resources/images/supplier.jpg" width="100" height="100"></a></p>
+	<p><a href="Logout"><img border="0" alt="logout" src="resources/images/logout.jpg" width="100" height="100"></a></p>
+<div class="dropdown">
+  <img src="resources/images/product.jpg" alt="Trolltunga Norway" width="100" height="50">
+  <div class="dropdown-content">
+     <a href="ViewCategory">View</a>
+      <a href="categoryPage">Add</a>
+   
+    <div class="desc">Beautiful Trolltunga, Norway</div>
+  </div>
+</div>	
+
+
+
 	<section id="articles"> <!-- A new section with the articles -->
 
 	<!-- Article 1 start -->
 
 	<div class="line"></div>
 	<!-- Dividing line --> <article id="article1"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
-	<h2>Photoshoot Effect</h2>
+	<article id="article2">
+
+	<h2>Super Bikes!! Roaring Around</h2>
+
+	<header>
+	<hgroup>
+	<h3>
+		<a href="https://www.youtube.com/watch?v=_nPxWHFUwZw/" class="stuts">Back
+			to form on <span>Test Rides</span>
+		</a>
+	</h3>
+	</hgroup></header>
+
 
 	<div class="line"></div>
-
-	<div class="articleBody clear">
-
-		<figure> <!-- The figure tag marks data (usually an image) that is part of the article -->
-		<a href="http://tutorialzine.com/2010/02/photo-shoot-css-jquery/"><img
-			src="http://tutorialzine.com/img/featured/641.jpg" width="620"
-			height="340" /></a> </figure>
-
-		<p>In this tutorial, we are creating a photo shoot effect with our
-			just-released PhotoShoot jQuery plug-in. With it you can convert a
-			regular div on the page into a photo shooting stage simulating a
-			camera-like feel.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			Integer luctus quam quis nibh fringilla sit amet consectetur lectus
-			malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet,
-			consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac,
-			sollicitudin quis lorem. Duis felis dui, vulputate nec adipiscing
-			nec, interdum vel tortor. Sed gravida, erat nec rutrum tincidunt,
-			metus mauris imperdiet nunc, et elementum tortor nunc at eros. Donec
-			malesuada congue molestie. Suspendisse potenti. Vestibulum cursus
-			congue sem et feugiat. Morbi quis elit odio.</p>
-	</div>
-	</article> <!-- Article 1 end --> <!-- Article 2 start -->
-
-	<div class="line"></div>
-
-
-
-<article id="article2">
-
-<h2>Super Bikes!! Roaring Around</h2>
-
-<a href="https://www.youtube.com/watch?v=_nPxWHFUwZw/" class="stuts">Back
-	to form on <span>Test Rides</span>
-</a>
-<div class="line"></div>
-<div id="jssor_1"
-	style="position: relative; margin: 0 auto; top: 0px; left: 5px; width: 620px; height: 340px; overflow: hidden; visibility: hidden;">
-	<!-- Loading Screen -->
-	<div data-u="loading" class="jssorl-oval"
-		style="position: absolute; top: 0px; left: 0px; text-align: center; background-color: rgba(0, 0, 0, 0.7);">
-		<img
-			style="margin-top: -19.0px; position: relative; top: 50%; width: 38px; height: 38px;"
-			src="resources/images/oval.svg" />
-	</div>
-	<div data-u="slides"
-		style="cursor: default; position: relative; top: 0px; left: 5px; width: 580px; height: 340px; overflow: hidden;">
-		<div data-b="0">
-			<img data-u="image" src="resources/images/dc5.jpg" />
-			<!-- <div style="position:absolute;top:107px;left:460px;width:460px;height:210px;z-index:0;">
+	<div id="jssor_1"
+		style="position: relative; margin: 0 auto; top: 0px; left: 5px; width: 620px; height: 340px; overflow: hidden; visibility: hidden;">
+		<!-- Loading Screen -->
+		<div data-u="loading" class="jssorl-oval"
+			style="position: absolute; top: 0px; left: 0px; text-align: center; background-color: rgba(0, 0, 0, 0.7);">
+			<img
+				style="margin-top: -19.0px; position: relative; top: 50%; width: 38px; height: 38px;"
+				src="resources/images/oval.svg" />
+		</div>
+		<div data-u="slides"
+			style="cursor: default; position: relative; top: 0px; left: 5px; width: 580px; height: 340px; overflow: hidden;">
+			<div data-b="0">
+				<img data-u="image" src="resources/images/dc5.jpg" />
+				<!-- <div style="position:absolute;top:107px;left:460px;width:460px;height:210px;z-index:0;">
 <img data-u="caption" data-t="0" style="position:absolute;top:-300px;left:89px;width:210px;height:178px;z-index:0;" src="resources/images/5.jpg" />
 <img data-u="caption" data-t="1" style="position:absolute;top:55px;left:-200px;width:114px;height:144px;z-index:0;" src="resources/images/2.jpg" />
 <img data-u="caption" data-t="2" style="position:absolute;top:88px;left:420px;width:219px;height:120px;z-index:0;" src="resources/images/1.jpg" />
 </div>
 -->
-			<div data-u="caption" data-t="3" data-to="0% 100%"
-				style="position:absolute; top: 240px; left: 120px; width: 257px; height: 127px; z-index: 0;">
-				<div
-					style="position: absolute; top: 4px; left: 34px; width: 198px; height: 150px; z-index: 0; overflow: hidden;">
-					<img data-u="caption" data-t="4"
-						style="position: absolute; top: -2px; left: -2px; width: 408px; height: 116px; z-index: 0;"
-						src="resources/images/mir1.jpg" />
+				<div data-u="caption" data-t="3" data-to="0% 100%"
+					style="position: absolute; top: 240px; left: 120px; width: 257px; height: 127px; z-index: 0;">
+					<div
+						style="position: absolute; top: 4px; left: 34px; width: 198px; height: 150px; z-index: 0; overflow: hidden;">
+						<img data-u="caption" data-t="4"
+							style="position: absolute; top: -2px; left: -2px; width: 408px; height: 116px; z-index: 0;"
+							src="resources/images/mir1.jpg" />
+					</div>
+					<img
+						style="position: absolute; top: 0px; left: 0px; width: 257px; height: 127px; z-index: 0;"
+						src="resources/images/mock-phone.png" /> <img data-u="caption"
+						data-t="5"
+						style="position: absolute; top: 22px; left: 139px; width: 108px; height: 108px; z-index: 0;"
+						src="resources/images/circle-hollow.png" /> <img data-u="caption"
+						data-t="6"
+						style="position: absolute; top: 31px; left: 148px; width: 90px; height: 90px; z-index: 0;"
+						src="resources/images/circle-solid.png" /> <img data-u="caption"
+						data-t="7"
+						style="position: absolute; top: 100px; left: 300px; width: 63px; height: 77px; z-index: 0;"
+						src="resources/images/hand.png" /> <img data-u="caption"
+						data-t="8"
+						style="position: absolute; top: -35px; left: 255px; width: 75px; height: 27px; z-index: 0;"
+						src="resources/images/swipe-arrow.png" />
 				</div>
-				<img
-					style="position: absolute; top: 0px; left: 0px; width: 257px; height: 127px; z-index: 0;"
-					src="resources/images/mock-phone.png" /> <img data-u="caption"
-					data-t="5"
-					style="position: absolute; top: 22px; left: 139px; width: 108px; height: 108px; z-index: 0;"
-					src="resources/images/circle-hollow.png" /> <img data-u="caption"
-					data-t="6"
-					style="position: absolute; top: 31px; left: 148px; width: 90px; height: 90px; z-index: 0;"
-					src="resources/images/circle-solid.png" /> <img data-u="caption"
-					data-t="7"
-					style="position: absolute; top: 100px; left: 300px; width: 63px; height: 77px; z-index: 0;"
-					src="resources/images/hand.png" /> <img data-u="caption"
-					data-t="8"
-					style="position: absolute; top: -35px; left: 255px; width: 75px; height: 27px; z-index: 0;"
-					src="resources/images/swipe-arrow.png" />
-			</div>
-			<!-- <a href="http://www.jssor.com/help/slideshow-transitions.html"
+				<!-- <a href="http://www.jssor.com/help/slideshow-transitions.html"
 				target="_blank"
 				style="display: block; position: absolute; top: 22px; left: 300px; width: 250px; height: 36px; z-index: 0; font-size: 22px; color: #ffffff; line-height: 36px;">300+
 				top bikes</a> -->
-		</div>
+			</div>
 
-		<div data-b="1" data-p="170.00">
-			<img data-u="image" src="resources/images/bc2.jpg" /> <!-- <a
+			<div data-b="1" data-p="170.00">
+				<img data-u="image" src="resources/images/bc2.jpg" />
+				<!-- <a
 				href="http://www.jssor.com/demos/introduction-slider.slider/=edit"
 				target="_blank"
 				style="display: block; position: absolute; top: 22px; left: 650px; width: 220px; height: 36px; z-index: 0; font-size: 22px; color: #ffffff; line-height: 36px; text-align: center;">About
 				R15</a> -->
 
-			<div data-u="caption" data-t="9" data-3d="1"
-				style="position: absolute; top: 150px; left: -36px; width: 853	px; height: 150px; z-index: 0;">
-				<div data-u="caption" data-t="10" data-to="100% 50%"
-					style="position: absolute; top: 0px; left: 900px; width: 72px; height: 72px; z-index: 0; background-color: #eb9434;">
+				<div data-u="caption" data-t="9" data-3d="1"
+					style="position: absolute; top: 150px; left: -36px; width: 853 px; height: 150px; z-index: 0;">
+					<div data-u="caption" data-t="10" data-to="100% 50%"
+						style="position: absolute; top: 0px; left: 900px; width: 72px; height: 72px; z-index: 0; background-color: #eb9434;">
 
-					<div data-u="caption" data-t="11"
-						style="position: absolute; top: 0px; left: 0px; width: 72px; height: 72px; z-index: 0; font-size: 46px; color: #ffffff; line-height: 72px; text-align: center;">All
+						<div data-u="caption" data-t="11"
+							style="position: absolute; top: 0px; left: 0px; width: 72px; height: 72px; z-index: 0; font-size: 46px; color: #ffffff; line-height: 72px; text-align: center;">All
+
+						</div>
+					</div>
+					<div data-u="caption" data-t="12" data-to="0% 50%"
+						style="position: absolute; top: 0px; left: 220px; width: 175px; height: 72px; z-index: 0; background-color: #eb9434; font-size: 45px; color: #ffffff; line-height: 72px; text-align: center;">vehicles
 
 					</div>
-				</div>
-				<div data-u="caption" data-t="12" data-to="0% 50%"
-					style="position: absolute; top: 0px; left: 220px; width: 175px; height: 72px; z-index: 0; background-color: #eb9434; font-size: 45px; color: #ffffff; line-height: 72px; text-align: center;">vehicles
+					<div data-u="caption" data-t="13" data-to="0% 50%"
+						style="position: absolute; top: 0px; left: 395px; width: 230px; height: 72px; z-index: 0; background-color: #eb9434; font-size: 45px; color: #ffffff; line-height: 72px; text-align: center;">guaranteed
 
+					</div>
+					<div data-u="caption" data-t="14"
+						style="position: absolute; top: 360px; left: 238px; width: 577px; height: 30px; z-index: 0; font-size: 24px; color: #ffffff; line-height: 30px; text-align: center;">bikers
+						world is one of the most reliable one!</div>
 				</div>
-				<div data-u="caption" data-t="13" data-to="0% 50%"
-					style="position: absolute; top: 0px; left: 395px; width: 230px; height: 72px; z-index: 0; background-color: #eb9434; font-size: 45px; color: #ffffff; line-height: 72px; text-align: center;">guaranteed
 
-				</div>
-				<div data-u="caption" data-t="14"
-					style="position: absolute; top: 360px; left: 238px; width: 577px; height: 30px; z-index: 0; font-size: 24px; color: #ffffff; line-height: 30px; text-align: center;">bikers
-					world is one of the most reliable one!</div>
-			</div>
-			
-			<div
-				style="position: absolute; top: 20px; left: 327px; width: 336px; height: 312px; z-index: 0;">
-				<div data-u="caption" data-t="25"
-					style="position: absolute; top: 82px; left: 104px; width: 128px; height: 147px; z-index: 0;">
+				<div
+					style="position: absolute; top: 20px; left: 327px; width: 336px; height: 312px; z-index: 0;">
+					<div data-u="caption" data-t="25"
+						style="position: absolute; top: 82px; left: 104px; width: 128px; height: 147px; z-index: 0;">
+					</div>
 				</div>
 			</div>
-		</div>
-		<div data-b="2" data-p="816.0">
-			<img data-u="image" src="resources/images/dc10.jpg" />
-			<div
-				style="position: absolute; top: 157px; left: 200px; width: 460px; height: 210px; z-index: 0;">
-				<img data-u="caption" data-t="0"
-					style="position: absolute; top: -420px; left: 150px; width: 160px; height: 128px; z-index: 0;"
-					src="resources/images/5.jpg" /> <img data-u="caption" data-t="1"
-					style="position: absolute; top: 8px; left: -65px; width: 94px; height: 114px; z-index: 0;"
-					src="resources/images/2.jpg" /> <img data-u="caption" data-t="2"
-					style="position: absolute; top: 8px; left: 427px; width: 149px; height: 140px; z-index: 0;"
-					src="resources/images/1.jpg" />
-			</div>
+			<div data-b="2" data-p="816.0">
+				<img data-u="image" src="resources/images/dc10.jpg" />
+				<div
+					style="position: absolute; top: 157px; left: 200px; width: 460px; height: 210px; z-index: 0;">
+					<img data-u="caption" data-t="0"
+						style="position: absolute; top: -420px; left: 150px; width: 160px; height: 128px; z-index: 0;"
+						src="resources/images/5" /> <img data-u="caption" data-t="1"
+						style="position: absolute; top: 8px; left: -65px; width: 94px; height: 114px; z-index: 0;"
+						src="resources/images/2.jpg" /> <img data-u="caption" data-t="2"
+						style="position: absolute; top: 8px; left: 427px; width: 149px; height: 140px; z-index: 0;"
+						src="resources/images/1.jpg" />
+				</div>
 
-			<!-- <a
+				<!-- <a
 				href="http://www.jssor.com/demos/introduction-slider.slider/=edit"
 				target="_blank"
 				style="display: block; position: absolute; top: 22px; left: 500px; width: 220px; height: 36px; z-index: 0; font-size: 22px; color: #ffffff; line-height: 36px; text-align: center;">view
@@ -208,24 +224,52 @@ var u=new function(){this.qf=e;this.og=function(b){var a=this.qf;a&&b()}},d={Ib:
 				target="_blank"
 				style="display: block; position: absolute; top: 22px; left: 720px; width: 220px; height: 36px; z-index: 0; font-size: 22px; color: #ffffff; line-height: 36px; text-align: center;">Sign
 				up Now!</a> -->
+			</div>
+			<a data-u="any" href="http://www.jssor.com" style="display: none">Introduction
+				Slider</a>
 		</div>
-		<a data-u="any" href="http://www.jssor.com" style="display: none">Introduction
-			Slider</a>
+		<!-- Bullet Navigator -->
+		<div data-u="navigator" class="jssorb05"
+			style="bottom: 16px; right: 16px;" data-autocenter="1">
+			<!-- bullet navigator item prototype -->
+			<div data-u="prototype" style="width: 16px; height: 16px;"></div>
+		</div>
+		<!-- Arrow Navigator -->
+		<span data-u="arrowleft" class="jssora22l"
+			style="top: 0px; left: 10px; width: 40px; height: 58px;"
+			data-autocenter="2"></span> <span data-u="arrowright"
+			class="jssora22r"
+			style="top: 0px; right: 10px; width: 40px; height: 58px;"
+			data-autocenter="2"></span>
 	</div>
-	<!-- Bullet Navigator -->
-	<div data-u="navigator" class="jssorb05"
-		style="bottom: 16px; right: 16px;" data-autocenter="1">
-		<!-- bullet navigator item prototype -->
-		<div data-u="prototype" style="width: 16px; height: 16px;"></div>
+	</article>  <!-- Article 1 end --> <!-- Article 2 start -->
+
+	<div class="line"></div>
+	
+	<article id="article2">
+	
+
+<h2>Rockers Roaring</h2>
+
+	<div class="line"></div>
+
+	<div class="articleBody clear">
+	<c:if test="${not empty registerButtonClicked}">
+	<%@include file="RegistrationForm.jsp" %>
+	</c:if>
+	
+	
+	
+	<c:if test="${not empty loginButtonClicked}">
+	<%@include file="LoginForm.jsp" %>
+	
+	</c:if>
 	</div>
-	<!-- Arrow Navigator -->
-	<span data-u="arrowleft" class="jssora22l"
-		style="top: 0px; left: 10px; width: 40px; height: 58px;"
-		data-autocenter="2"></span> <span data-u="arrowright"
-		class="jssora22r"
-		style="top: 0px; right: 10px; width: 40px; height: 58px;"
-		data-autocenter="2"></span>
-</div>
+	
+	<div class="line">
+	
+
+
 </article>
 
 
@@ -233,13 +277,6 @@ var u=new function(){this.qf=e;this.og=function(b){var a=this.qf;a&&b()}},d={Ib:
 
 
 
-
-
-
-
-
-
-	
 	<article id="article3">
 	<h2>Halftone Navigation Menu</h2>
 
@@ -265,11 +302,11 @@ var u=new function(){this.qf=e;this.og=function(b){var a=this.qf;a&&b()}},d={Ib:
 			malesuada congue molestie. Suspendisse potenti. Vestibulum cursus
 			congue sem et feugiat. Morbi quis elit odio.</p>
 	</div>
-	</article> <!-- Article 3 end -->  <br>
-	
+	</article> <!-- Article 3 end --> <br>
+
 
 	<div class="line"></div>
-	
+
 	<!-- <article id="article4">
 	<h2>Sweet AJAX Tabs</h2>
 
@@ -296,12 +333,13 @@ var u=new function(){this.qf=e;this.og=function(b){var a=this.qf;a&&b()}},d={Ib:
 	</article> Article 2 end Article 3 start
 
 	<div class="line"></div>
-	 -->
-	
-	</section>
-	<script type="text/javascript">jssor_1_slider_init();</script> <script
+	 --> </section> <script type="text/javascript">jssor_1_slider_init();</script> <script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script src="resources/js/jquery.scrollTo-min.js"></script> <script
 		src="resources/js/script.js"></script>
+		 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+		
 </body>
 </html>

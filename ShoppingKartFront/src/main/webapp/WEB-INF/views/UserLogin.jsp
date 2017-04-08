@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome user
-
-<%@include file="/WEB-INF/views/Menu.jsp" %>
 
 </body>
 </html>

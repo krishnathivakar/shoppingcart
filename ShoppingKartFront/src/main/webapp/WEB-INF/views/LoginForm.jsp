@@ -4,19 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="resources/css/registerstyle.css" />
 <title>Insert title here</title>
 </head>
 <body>
-<form action="isvaliduser" method="post">
-<table align="center">
-<tr><td>User name:</td>
-<td><input type="text" name="userName"  placeholder="enter user name"></td></tr>
-<tr><td>User password:</td>
-<td><input type="text" name="userPassword" placeholder="enter  password"></td></tr>
-</table>
-<center>
-<input type="submit" name="submit" value="Login">
-</center>
-</form>
+<Form action="isvaliduser" method="post">
+  <div class="login-form">
+     <h1>Login</h1>
+     <div class="form-group ">
+       <input type="text" class="form-control" placeholder="Email id " name="userMailId" id="userMailId">
+       <i class="fa fa-user"></i>
+     </div>
+     <div class="form-group log-status">
+       <input type="password" class="form-control" placeholder="Password" name="userPassword" id="Passwod">
+       <i class="fa fa-lock"></i>
+     </div>
+      <span class="alert">Invalid Credentials</span>
+      <a class="link" href="#">Lost your password?</a>
+     <button type="submit" class="log-btn" >Log in</button>
+     
+    
+   </div></Form>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
 </body>
 </html>

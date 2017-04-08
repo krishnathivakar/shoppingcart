@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,8 +8,38 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="ViewProduct" method="post">
-List of Product
-</form>
+list of products
+<table border="1">
+
+<tr><td>serial no</td>
+<td>productId</td>
+<td>productName</td>
+<td>productDescription</td>
+<td>productPrice</td>
+<td>productRating</td>
+<td>Edit</td>
+<td>Delete</td>
+</tr>
+
+<c:forEach items="${productList}" var="product" varStatus="status">
+
+<tr>
+<td>${status.count}</td>
+<td>${product.productId }</td>
+<td>${product.productName }</td>
+<td>${product.productDescription }</td>
+<td>${product.productPrice }</td>
+<td>${product.productRating }</td>
+<td><a>Edit</a></td>
+<td><a>Delete</a></td>
+
+</tr>
+</c:forEach>
+
+
+
+
+
+</table>
 </body>
 </html>

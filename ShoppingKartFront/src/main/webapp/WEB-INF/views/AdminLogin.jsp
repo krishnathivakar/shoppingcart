@@ -6,50 +6,21 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
-#nav ul {
-    list-style-type: none;
-    margin:0 0 .5em 0;
-    padding: 0;
-    font-weight: normal;
-    line-height: 1.2em;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    
-}
-
-li a:hover {
-    background-color: orange; 
-    
-}
-
-</style>
 </head>
 <body>
 Welcome Admin
 
 <%@include file="/WEB-INF/views/Menu.jsp" %>
-
+<br>
+<div class="row">
      <div class="dropdown">
    <button class="dropbtn"><li>Category</a></li></button>
     <div class="dropdown-content">
-      <a href="viewCategory">View</a>
+      <a href="ViewCategory">View</a>
       <a href="categoryPage">Add</a>
     </div>
   </div> 			
-  
+  <br>
   <div class="dropdown">
    <button class="dropbtn"><li>Product</li></button>
     <div class="dropdown-content">
@@ -57,13 +28,51 @@ Welcome Admin
       <a href="productPage">Add</a>
     </div>
   </div> 	
-  
+  <br>
   <div class="dropdown">
    <button class="dropbtn"><li>Supplier</li></button>
     <div class="dropdown-content">
       <a href="ViewSupplier">View</a>
-      <a href="supplierPage">Add</a>
+      <a href="SupplierPage">Add</a>
     </div>
   </div> 
+  </div>
+ <br>
+ <br>
+ <br>
+ <hr>
+  <c:choose>
+  <c:when test="${not empty addCategoryClicked }">
+  <%@include file="/WEB-INF/views/CategoryForm.jsp" %>
+  </c:when>
+  <c:when test="${not empty viewCategoryClicked }">
+  <%@include file="/WEB-INF/views/ViewCategory.jsp" %>
+  </c:when>
+  <c:when test="${not empty editCategoryClicked }">
+  <%@include file="/WEB-INF/views/EditCategory.jsp" %>
+  </c:when>
+  
+  <c:when test="${not empty viewProductClicked }">
+  <%@include file="/WEB-INF/views/ViewProduct.jsp" %>
+  </c:when>
+  
+  <c:when test="${not empty addProductClicked }">
+  <%@include file="/WEB-INF/views/ProductForm.jsp" %>
+  </c:when>
+  
+  <c:when test="${not empty viewProductClicked }">
+  <%@include file="/WEB-INF/views/ViewProduct.jsp" %>
+  </c:when>
+  
+  
+  <c:when test="${not empty addSupplierClicked }">
+  <%@include file="/WEB-INF/views/SupplierForm.jsp" %>
+  </c:when>
+  
+  <c:when test="${not empty viewSupplierClicked }">
+  <%@include file="/WEB-INF/views/ViewSupplier.jsp" %>
+  </c:when>
+  
+  </c:choose>
 </body>
 </html>

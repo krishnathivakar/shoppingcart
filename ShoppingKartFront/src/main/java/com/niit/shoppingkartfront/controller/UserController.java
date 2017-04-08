@@ -28,7 +28,7 @@ public class UserController {
 	private Role role;
 
 	@RequestMapping("addNewUser")
-	public String addUser(@ModelAttribute User user) {
+	public String addUser(@ModelAttribute User user, Model model) {
 
 		user.setEnabled(true);
 		role.setUserMailId(user.getUserMailId());
@@ -43,18 +43,20 @@ public class UserController {
 		roleDAO.save(role);
 		
 		
+		model.addAttribute("loginButtonClicked", true);
 		
-		return "NewLogin";
+		
+		return "home";
 
 	}
 	@RequestMapping("/afterlogin")
 	public String loginProcess(Principal p, Model model){
 		
-		String name = p.getName();
+		String email = p.getName();
 		
-		User user = userDAO.getUserByUserName(name);
+		User user = userDAO.getUserByUserMailId(email);
 	
-		Role role = roleDAO.getUserByUserName(name);
+		Role role = roleDAO.getUserByUserMailId(email);
 		
 		String role1 = role.getRole();
 		
@@ -68,7 +70,7 @@ public class UserController {
 		}
 		else{		
 		
-		return "NewLogin";
+		return "LoginForm";
 		}
 	}
 }
