@@ -9,6 +9,8 @@ public interface RoleDAO {
 	public void update(Role user);
 
 	public Role getUserByUserId(String userId);
+	
+	public Role getUserByUserMailId(String userMailId);
 
 	public Role getUserByUserName(String userName);
 	

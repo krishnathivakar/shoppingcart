@@ -113,9 +113,9 @@ public class UserDAOImpl  implements UserDAO{
 
 
 	@Transactional
-	public User getUserByUserMailId(String userMailId) {
+	public User getUserByUserMailId(String MailId) {
 		// TODO Auto-generated method stub
-		String hql = "from User where User MailId ='" + userMailId + "'";
+		String hql = "from User where userMailId ='" + MailId + "'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<User> listUser = (List<User>) (query).list();

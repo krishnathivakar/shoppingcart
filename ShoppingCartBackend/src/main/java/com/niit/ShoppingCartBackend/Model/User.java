@@ -34,6 +34,7 @@ public class User {
 
 	private String userCityCode;
 
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userId")
 	private Role role;

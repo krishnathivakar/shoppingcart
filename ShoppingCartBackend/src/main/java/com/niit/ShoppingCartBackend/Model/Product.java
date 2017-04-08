@@ -19,6 +19,10 @@ public class Product {
 	
 	private String productDescription;
 	
+	private String category;
+	
+	private String supplier;
+	
 	private String productPrice;
 	
 	private String productRating;
@@ -61,6 +65,22 @@ public class Product {
 
 	public void setProductRating(String productRating) {
 		this.productRating = productRating;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
 	}
 
 	

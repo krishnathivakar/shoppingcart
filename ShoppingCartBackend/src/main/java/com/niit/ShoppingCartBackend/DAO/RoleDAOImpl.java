@@ -55,7 +55,7 @@ public class RoleDAOImpl implements RoleDAO {
 	@Transactional
 	public Role getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
-		String hql = "from User where Username ='" + userName + "'";
+		String hql = "from User where userName ='" + userName + "'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Role> listRole = (List<Role>) (query).list();
@@ -65,6 +65,22 @@ public class RoleDAOImpl implements RoleDAO {
 		}
 		return null;
 	}
+	
+	@Transactional
+	public Role getUserByUserMailId(String userMailId) {
+		// TODO Auto-generated method stub
+		String hql = "from Role where userMailId ='" + userMailId + "'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Role> listRole = (List<Role>) (query).list();
+
+		if (listRole != null && !listRole.isEmpty()) {
+			return listRole.get(0);
+		}
+
+		return null;
+	}
+
 
 	@Transactional
 	public void deleteByUserId(String userId) {
@@ -75,4 +91,8 @@ public class RoleDAOImpl implements RoleDAO {
 
 	}
 
+
+
+
+	
 }
