@@ -30,8 +30,8 @@ list of Suppliers
 <td>${supplier.supplierDescription }</td>
 <td>${supplier.supplierRating }</td>
 <td>${supplier.supplierLocation }</td>
-<td><a>Edit</a></td>
-<td><a>Delete</a></td>
+<td><a href="editSupplier?supplierId=${supplier.supplierId }">Edit</a></td>
+<td><a href="deleteSupplier?supplierId=${supplier.supplierId }">Delete</a></td>
 </tr>
 </c:forEach>
 

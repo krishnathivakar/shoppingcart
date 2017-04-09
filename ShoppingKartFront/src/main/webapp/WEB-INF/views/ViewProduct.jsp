@@ -30,8 +30,8 @@ list of products
 <td>${product.productDescription }</td>
 <td>${product.productPrice }</td>
 <td>${product.productRating }</td>
-<td><a>Edit</a></td>
-<td><a>Delete</a></td>
+<td><a href="editProduct?productId=${product.productId }">Edit</a></td>
+<td><a href="deleteProduct?productId=${product.productId }">Delete</a></td>
 
 </tr>
 </c:forEach>

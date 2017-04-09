@@ -9,7 +9,7 @@
 <body>
 
 
-<form action="addsupplier" method="post">
+<form action="addSupplier" method="post">
 <table align="center">
 <tr><td>supplier Name:</td><br>
 <td><input type="text" name="supplierName" placeholder="enter supplier name"/></td></tr>

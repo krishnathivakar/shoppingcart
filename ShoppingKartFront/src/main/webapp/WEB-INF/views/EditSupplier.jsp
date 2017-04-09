@@ -7,20 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="addsupplier" method="post">
+<form action="afterEditSupplier" method="post">
 <table align="center">
 <tr><td>supplier Id:</td>
-<td><input type="text" name="supplierId" placeholder="enter supplier id"></td></tr>
+<td><input type="text" name="supplierId" placeholder="enter supplier id" value="${supplier.supplierId }" readonly="true"></td></tr>
 
 
 <tr><td>supplier Name:</td><br>
-<td><input type="text" name="supplierName" placeholder="enter supplier name"/></td></tr>
+<td><input type="text" name="supplierName" placeholder="enter supplier name" value="${supplier.supplierName }"/></td></tr>
 <tr><td>supplier Description:</td><br>
-<td><input type="text" name="supplierDescription" placeholder="enter supplier Description"/></td></tr>
+<td><input type="text" name="supplierDescription" placeholder="enter supplier Description" value="${supplier.supplierDescription }"/></td></tr>
 <tr><td>supplier Rating:</td><br>
-<td><input type="text" name="supplierRating" placeholder="enter supplier Rating"/></td></tr>
+<td><input type="text" name="supplierRating" placeholder="enter supplier Rating" value="${supplier.supplierRating }"/></td></tr>
 <tr><td>supplier Location:</td><br>
-<td><input type="text" name="supplierLocation" placeholder="enter supplier Location"/></td></tr>
+<td><input type="text" name="supplierLocation" placeholder="enter supplier Location" value="${supplier.supplierLocation }"/></td></tr>
 </table>
 <center>
 <input type="submit" name="SubmitForm" value="AddNewSupplier">

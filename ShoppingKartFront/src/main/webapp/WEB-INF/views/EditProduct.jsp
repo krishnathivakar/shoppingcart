@@ -7,19 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="addproduct" method="post">
+<form action="afterEditProduct" method="post">
 <table align="center">
 <tr><td>product Id:</td>
-<td><input type="text" name="productId" placeholder="enter product id"></td></tr>
+<td><input type="text" name="productId" placeholder="enter product id" value="${product.productId }" readonly="true"/></td></tr>
 
 <tr><td>Product Name:</td><br>
-<td><input type="text" name="productName" placeholder="enter product name"/></td></tr>
+<td><input type="text" name="productName" placeholder="enter product name" value="${ product.productName}"/></td></tr>
 <tr><td>Product Description:</td><br>
-<td><input type="text" name="productDescription" placeholder="enter product Description"/></td></tr>
+<td><input type="text" name="productDescription" placeholder="enter product Description" value="${product.productDescription  }"/></td></tr>
 <tr><td>Product Price:</td><br>
-<td><input type="text" name="productPrice" placeholder="enter product price"/></td></tr>
+<td><input type="text" name="productPrice" placeholder="enter product price" value="${ product.productPrice }"/></td></tr>
 <tr><td>Product Rating:</td><br>
-<td><input type="text" name="productRating" placeholder="enter product Rating"/></td></tr>
+<td><input type="text" name="productRating" placeholder="enter product Rating" value="${product.productRating }"/></td></tr>
 </table>
 <center>
 <input type="submit" name="SubmitForm" value="AddNewProduct">

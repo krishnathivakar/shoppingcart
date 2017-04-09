@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="resources/css/registerstyle.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
 <title>Insert title here</title>
+<style>
+
+</style>
 </head>
+
 <body>
 <Form action="isvaliduser" method="post">
   <div class="login-form">
@@ -19,10 +23,10 @@
        <input type="password" class="form-control" placeholder="Password" name="userPassword" id="Passwod">
        <i class="fa fa-lock"></i>
      </div>
-      <span class="alert">Invalid Credentials</span>
+      <!-- <span class="alert">Invalid Credentials</span>
       <a class="link" href="#">Lost your password?</a>
-     <button type="submit" class="log-btn" >Log in</button>
-     
+ -->     <button type="submit" class="log-btn" >Log in</button>
+    
     
    </div></Form>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

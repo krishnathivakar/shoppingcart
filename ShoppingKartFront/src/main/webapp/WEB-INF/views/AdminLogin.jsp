@@ -10,33 +10,10 @@
 <body>
 Welcome Admin
 
-<%@include file="/WEB-INF/views/Menu.jsp" %>
+<br><br>
+<%@include file="/WEB-INF/views/NavBar.jsp" %>
 <br>
-<div class="row">
-     <div class="dropdown">
-   <button class="dropbtn"><li>Category</a></li></button>
-    <div class="dropdown-content">
-      <a href="ViewCategory">View</a>
-      <a href="categoryPage">Add</a>
-    </div>
-  </div> 			
-  <br>
-  <div class="dropdown">
-   <button class="dropbtn"><li>Product</li></button>
-    <div class="dropdown-content">
-      <a href="ViewProduct">View</a>
-      <a href="productPage">Add</a>
-    </div>
-  </div> 	
-  <br>
-  <div class="dropdown">
-   <button class="dropbtn"><li>Supplier</li></button>
-    <div class="dropdown-content">
-      <a href="ViewSupplier">View</a>
-      <a href="SupplierPage">Add</a>
-    </div>
-  </div> 
-  </div>
+
  <br>
  <br>
  <br>
@@ -52,9 +29,9 @@ Welcome Admin
   <%@include file="/WEB-INF/views/EditCategory.jsp" %>
   </c:when>
   
-  <c:when test="${not empty viewProductClicked }">
+  <%-- <c:when test="${not empty viewProductClicked }">
   <%@include file="/WEB-INF/views/ViewProduct.jsp" %>
-  </c:when>
+  </c:when> --%>
   
   <c:when test="${not empty addProductClicked }">
   <%@include file="/WEB-INF/views/ProductForm.jsp" %>
@@ -64,6 +41,11 @@ Welcome Admin
   <%@include file="/WEB-INF/views/ViewProduct.jsp" %>
   </c:when>
   
+  <c:when test="${not empty editProductClicked }">
+  <%@include file="/WEB-INF/views/EditProduct.jsp" %>
+  </c:when>
+  
+  
   
   <c:when test="${not empty addSupplierClicked }">
   <%@include file="/WEB-INF/views/SupplierForm.jsp" %>
@@ -72,6 +54,12 @@ Welcome Admin
   <c:when test="${not empty viewSupplierClicked }">
   <%@include file="/WEB-INF/views/ViewSupplier.jsp" %>
   </c:when>
+  
+  <c:when test="${not empty editSupplierClicked }">
+  <%@include file="/WEB-INF/views/EditSupplier.jsp" %>
+  </c:when>
+  
+  
   
   </c:choose>
 </body>
