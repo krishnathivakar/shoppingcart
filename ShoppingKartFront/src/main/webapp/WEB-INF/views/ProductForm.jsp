@@ -9,38 +9,59 @@
 </head>
 <body>
 
-<form action="addproduct" method="post">
-<table align="center">
-<tr><td>Product Name:</td><br>
-<td><input type="text" name="productName" placeholder="enter product name"/></td></tr>
-<tr><td>Product Description:</td><br>
-<td><input type="text" name="productDescription" placeholder="enter product Description"/></td></tr>
-<tr><td>Category Name  </td>
-<td><select class="" name="category">
-            <option value="">Select Category</option>
+<form action="addproduct" method="post" enctype="multipart/form-data" style="margin-bottom:6%;">
+<div class="login-form">
+			<h1>Product</h1>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Product Name"
+					name="productName" id="productName"> <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group log-status">
+				<input type="text" class="form-control" placeholder="Product Description"
+					name="productDescription" id="productDescription"> <i class="fa fa-lock"></i>
+			</div>
+
+<table>
+<tr><td>Category Name  </td><div class="form-group ">
+<td><select class="form-control" name="category">
+            <option value="" class="form-control">Select Category</option>
             <c:forEach items="${categoryList}" var="category">	
             <option value="${category.categoryName }">${category.categoryName }</option>
             </c:forEach>
             </select><br><br></td>
 </tr>
 <tr><td>Supplier Name  </td>
-<td><select class="" name="supplier">
+<td><select class="form-control" name="supplier">
             <option value="">Select Supplier</option>
             <c:forEach items="${supplierList}" var="supplier">
             <option value="${supplier.supplierName }">${supplier.supplierName }</option>
            </c:forEach>
-            </select><br><br></td>
-</tr>
+            </select><br><br></td><i class="fa fa-user"></i></div>
+</tr></table>
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Product Price "
+					name="productPrice" id="productPrice"> <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Product Rating "
+					name="productRating" id="productRating"> <i class="fa fa-user"></i>
+			</div>
+			<!-- File to upload: -->
+			<div class="form-group ">
+				<input type="file"  class="form-control" placeholder="Upload Image"
+				 name="file" id="file"><i class="fa fa-user"></i>
+			</div>
+			
+			<button type="submit" class="log-btn" value="AddNewProduct">Submit!</button>
 
 
-<tr><td>Product Price:</td><br>
-<td><input type="text" name="productPrice" placeholder="enter product price"/></td></tr>
-<tr><td>Product Rating:</td><br>
-<td><input type="text" name="productRating" placeholder="enter product Rating"/></td></tr>
-</table>
-<center>
-<input type="submit" name="SubmitForm" value="AddNewProduct">
-</center>
+		</div>
+
+
+
 </form>
 
 </body>

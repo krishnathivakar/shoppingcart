@@ -8,8 +8,10 @@
 <title>Category Table</title>
 </head>
 <body>
-List of Category
-<table border="1">
+<div class="login-form">
+			<h1>List of Category</h1>
+
+<table border="2">
 
 <tr><td>Serial no</td>
 <td>categoryId</td>
@@ -33,6 +35,6 @@ List of Category
 </c:forEach>
 
 </table>
-
+</div>
 </body>
 </html>

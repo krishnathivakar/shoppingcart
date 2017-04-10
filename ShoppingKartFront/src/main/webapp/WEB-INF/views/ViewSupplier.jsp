@@ -8,8 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-list of Suppliers
-<table border="1">
+<div class="login-form">
+			<h1>List of Supplier</h1>
+
+
+
+<table border="2">
 
 <tr><td>serial no</td>
 <td>supplierId</td>
@@ -36,5 +40,6 @@ list of Suppliers
 </c:forEach>
 
 </table>
+</div>
 </body>
 </html>

@@ -8,24 +8,42 @@
 </head>
 <body>
 <form action="afterEditSupplier" method="post">
-<table align="center">
-<tr><td>supplier Id:</td>
-<td><input type="text" name="supplierId" placeholder="enter supplier id" value="${supplier.supplierId }" readonly="true"></td></tr>
+<div class="login-form">
+			<h1>Supplier</h1>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control"  name="supplierId"  id="supplierId" placeholder="supplier Id" value="${supplier.supplierId }" readonly="true"><i
+					class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Name"
+					name="supplierName" id="supplierName" value="${supplier.supplierName}" > <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group log-status">
+				<input type="text" class="form-control" placeholder="Supplier Description"
+					name="supplierDescription" id="supplierDescription" value="${supplier.supplierDescription }"> <i class="fa fa-lock"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Rating "
+					name="supplierRating" id="supplierRating" value="${supplier.supplierRating }"> <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Location "
+					name="supplierLocation" id="supplierLocation" value="${supplier.supplierLocation }"> <i class="fa fa-user"></i>
+			</div>
+			
+			
+			<button type="submit" class="log-btn" value="AddNewSupplier">Submit!</button>
 
 
-<tr><td>supplier Name:</td><br>
-<td><input type="text" name="supplierName" placeholder="enter supplier name" value="${supplier.supplierName }"/></td></tr>
-<tr><td>supplier Description:</td><br>
-<td><input type="text" name="supplierDescription" placeholder="enter supplier Description" value="${supplier.supplierDescription }"/></td></tr>
-<tr><td>supplier Rating:</td><br>
-<td><input type="text" name="supplierRating" placeholder="enter supplier Rating" value="${supplier.supplierRating }"/></td></tr>
-<tr><td>supplier Location:</td><br>
-<td><input type="text" name="supplierLocation" placeholder="enter supplier Location" value="${supplier.supplierLocation }"/></td></tr>
-</table>
-<center>
-<input type="submit" name="SubmitForm" value="AddNewSupplier">
-</center>
+		</div>
 </form>
+
+
 
 </body>
 </html>

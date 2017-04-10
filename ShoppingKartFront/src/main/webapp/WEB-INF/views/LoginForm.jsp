@@ -23,6 +23,13 @@
        <input type="password" class="form-control" placeholder="Password" name="userPassword" id="Passwod">
        <i class="fa fa-lock"></i>
      </div>
+     <c:if test="${not empty error}">
+				<div class="error"><b>${error}</b></div>
+	 			</c:if> 
+				<c:if test="${not empty logout}">
+			<div class="msg"><b>${logout}</b></div>
+				</c:if>				
+				<b>${message}</b>
       <!-- <span class="alert">Invalid Credentials</span>
       <a class="link" href="#">Lost your password?</a>
  -->     <button type="submit" class="log-btn" >Log in</button>

@@ -8,20 +8,36 @@
 </head>
 <body>
 <form action="afterEdit" method="post">
-<table align="center">
-<div class="container">
-<tr><td>category Id:</td>
-<td><input type="text" name="categoryId" placeholder="enter category id" value="${category.categoryId }" readonly="true"></td></tr>
 
-<tr><td>category name:</td>
-<td><input type="text" name="categoryName" placeholder="enter category name" value="${category.categoryName }"></td></tr>
-<tr><td>category description:</td>
-<td><input type="text"name="categoryDescription" placeholder="enter category description" value="${category.categoryDescription }"></td></tr>
-</div>
-</table>
-<center>
-<input type="submit" name="submit" value="AddNewCategory">
-</center>
+
+
+<form action="addCategory" method="post">
+
+		<div class="login-form">
+			<h1>Category</h1>
+
+			<div class="form-group ">
+				<input type="text" class="form-control"  name="categoryId"  id="categoryId" placeholder="Category Id" value="${category.categoryId }" readonly="true"><i
+					class="fa fa-user"></i>
+			</div>
+
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Category Name"
+					name="categoryName" id="categoryName" value="${category.categoryName }"> <i
+					class="fa fa-user"></i>
+			</div>
+
+			<div class="form-group log-status">
+				<input type="text" class="form-control" placeholder="Category Description" 
+				name="categoryDescription"	id="categoryDescription"  value="${category.categoryDescription }"> <i class="fa fa-lock"></i>
+			</div>
+			<button type="submit" class="log-btn" value="AddNewCategory">Submit!</button>
+
+
+		</div>
+
+	</form>
+
 </form>
 
 </body>

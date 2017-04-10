@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="position:absolute; bottom:0px; width:100%; height:60px; background-color:black; font-color:white;">
+<nav class="navbar navbar-inverse" style="position:fixed; bottom:-20px; width:100%; height:50px; background-color:black; font-color:white;">
 <div class="container-fluid">
 <div class="navbar-brand">
 	<footer>

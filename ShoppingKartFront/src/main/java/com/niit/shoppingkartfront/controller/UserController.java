@@ -1,6 +1,7 @@
 package com.niit.shoppingkartfront.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.ShoppingCartBackend.DAO.ProductDAO;
 import com.niit.ShoppingCartBackend.DAO.RoleDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAO;
+import com.niit.ShoppingCartBackend.Model.Product;
 import com.niit.ShoppingCartBackend.Model.Role;
 import com.niit.ShoppingCartBackend.Model.User;
 
@@ -19,7 +22,8 @@ public class UserController {
 	@Autowired
 	private UserDAO userDAO;
 
-
+	@Autowired
+	private ProductDAO productDAO;	
 	
 	@Autowired
 	private RoleDAO roleDAO;
@@ -65,6 +69,10 @@ public class UserController {
 			return "AdminLogin";
 		}
 		else if(role1.equals("ROLE_USER")){
+			
+			List<Product> productList = productDAO.list();
+			model.addAttribute("productList", productList);
+
 			
 			return "UserLogin";
 		}

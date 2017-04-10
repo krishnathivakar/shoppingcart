@@ -8,8 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-list of products
-<table border="1">
+<div class="login-form">
+			<h1>List of Product</h1>
+
+
+
+
+<table border="2">
 
 <tr><td>serial no</td>
 <td>productId</td>
@@ -41,5 +46,6 @@ list of products
 
 
 </table>
+</div>
 </body>
 </html>

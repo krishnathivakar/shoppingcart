@@ -7,19 +7,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-	<br>
-	<br>
+<body  style="margin-bottom:10%">
 	<%@include file="/WEB-INF/views/NavBar.jsp"%>
-	<c:if test="${not empty registerButtonClicked}">
-		<%@include file="RegistrationForm.jsp"%>
-	</c:if>
-
-
-
-	<c:if test="${not empty loginButtonClicked}">
-		<%@include file="LoginForm.jsp"%>
-	</c:if>
+	
+	
+	
+	<c:choose>
+	<c:when test="${not empty registerButtonClicked}">
+	<%@include file="RegistrationForm.jsp"%>
+	
+	</c:when>
+	<c:when test="${not empty loginButtonClicked}">
+	<%@include file="LoginForm.jsp"%>
+	</c:when>
+	<c:otherwise>
+	<%@include file="/WEB-INF/views/FrontView.jsp"%><br><br>
+	
+	
+	<%@include file="/WEB-INF/views/ListedProducts.jsp"%>
+	</c:otherwise>
+	</c:choose>
+	
 	<%@include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>

@@ -10,19 +10,34 @@
 
 
 <form action="addSupplier" method="post">
-<table align="center">
-<tr><td>supplier Name:</td><br>
-<td><input type="text" name="supplierName" placeholder="enter supplier name"/></td></tr>
-<tr><td>supplier Description:</td><br>
-<td><input type="text" name="supplierDescription" placeholder="enter supplier Description"/></td></tr>
-<tr><td>supplier Rating:</td><br>
-<td><input type="text" name="supplierRating" placeholder="enter supplier Rating"/></td></tr>
-<tr><td>supplier Location:</td><br>
-<td><input type="text" name="supplierLocation" placeholder="enter supplier Location"/></td></tr>
-</table>
-<center>
-<input type="submit" name="SubmitForm" value="AddNewSupplier">
-</center>
+<div class="login-form">
+			<h1>Supplier</h1>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Name"
+					name="supplierName" id="supplierName"> <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group log-status">
+				<input type="text" class="form-control" placeholder="Supplier Description"
+					name="supplierDescription" id="supplierDescription"> <i class="fa fa-lock"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Rating "
+					name="supplierRating" id="supplierRating"> <i class="fa fa-user"></i>
+			</div>
+			
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Supplier Location "
+					name="supplierLocation" id="supplierLocation"> <i class="fa fa-user"></i>
+			</div>
+			
+			
+			<button type="submit" class="log-btn" value="AddNewSupplier">Submit!</button>
+
+
+		</div>
 </form>
 
 </body>

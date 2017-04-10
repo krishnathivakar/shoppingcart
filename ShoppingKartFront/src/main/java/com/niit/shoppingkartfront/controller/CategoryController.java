@@ -18,6 +18,13 @@ public class CategoryController {
 		@Autowired
 		private CategoryDAO categoryDAO;
 		
+		@RequestMapping("categoryPage")
+		public String newCategory(Model model) {
+			model.addAttribute("addCategoryClicked", true);
+			return "AdminLogin";
+		}
+		
+		
 		@RequestMapping("addCategory")
 		public String addCategory(@ModelAttribute Category category){
 			categoryDAO.save(category);
@@ -50,6 +57,10 @@ public class CategoryController {
 			categoryDAO.update(category);
 			return "redirect:ViewCategory";
 			
+		}
+		@ModelAttribute
+		public void commmonCategory(Model model){
+			model.addAttribute("AdminLoggedIn", true);
 		}
 	}
 

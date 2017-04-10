@@ -8,9 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.niit.ShoppingCartBackend.DAO.CategoryDAO;
 import com.niit.ShoppingCartBackend.DAO.ProductDAO;
+import com.niit.ShoppingCartBackend.DAO.SupplierDAO;
+import com.niit.ShoppingCartBackend.Model.Category;
 import com.niit.ShoppingCartBackend.Model.Product;
+import com.niit.ShoppingCartBackend.Model.Supplier;
 
 
 @Controller
@@ -19,9 +24,29 @@ public class ProductController {
 	@Autowired
 	private ProductDAO productDAO;
 	
-	@RequestMapping("addProduct")
-	public String addProduct(@ModelAttribute Product product){
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private SupplierDAO supplierDAO;
+	
+	@RequestMapping("productPage")
+	public String newproduct(Model model) {
+		List<Category> categoryList = categoryDAO.list();
+		List<Supplier> supplierList = supplierDAO.list();
+		
+		model.addAttribute("categoryList", categoryList);
+		model.addAttribute("supplierList", supplierList);
+		model.addAttribute("addProductClicked", true);
+		return "AdminLogin";
+	}
+
+	
+	@RequestMapping("addproduct")
+	public String addProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file ) {
 		productDAO.save(product);
+		String path = "F://Eclipsse Project/project/copied project/ShoppingKartFront/src/main/webapp/WEB-INF/resources/images/productImages/";
+		FileUtil.upload(path, file, product.getProductId()+".jpg");
 		return "redirect:ViewProduct";
 		
 	}
@@ -30,7 +55,6 @@ public class ProductController {
 	public String viewProduct(Model model) {
 		List<Product> productList = productDAO.list();
 		model.addAttribute("productList", productList);
-		
 		model.addAttribute("viewProductClicked", true);
 		return "AdminLogin";
 	}
@@ -55,5 +79,8 @@ public class ProductController {
 		
 	}
 	
-	
+	@ModelAttribute
+	public void commmonProduct(Model model){
+		model.addAttribute("AdminLoggedIn", true);
+	}
 }

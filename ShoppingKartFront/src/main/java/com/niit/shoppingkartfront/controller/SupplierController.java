@@ -21,6 +21,13 @@ public class SupplierController {
 	@Autowired
 	private SupplierDAO supplierDAO;
 	
+	@RequestMapping("SupplierPage")
+	public String newSupplier(Model model) {
+		model.addAttribute("addSupplierClicked", true);
+		return "AdminLogin";
+	}
+	
+	
 	@RequestMapping("addSupplier")
 	public String addSupplier(@ModelAttribute Supplier supplier){
 		supplierDAO.save(supplier);
@@ -57,6 +64,9 @@ public class SupplierController {
 		
 	}
 	
-	
+	@ModelAttribute
+	public void commmonSupplier(Model model){
+		model.addAttribute("AdminLoggedIn", true);
+	}
 
 }
