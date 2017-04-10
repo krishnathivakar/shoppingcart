@@ -1,11 +1,15 @@
 package com.niit.ShoppingCartBackend.Model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Table(name = "Product")
 @Entity
@@ -26,6 +30,19 @@ public class Product {
 	private String productPrice;
 	
 	private String productRating;
+	
+	@Transient
+	private MultipartFile image;
+
+
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 
 	public String getProductId() {
 		return productId;
