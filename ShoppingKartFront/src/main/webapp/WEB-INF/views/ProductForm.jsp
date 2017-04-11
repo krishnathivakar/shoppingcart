@@ -40,6 +40,13 @@
            </c:forEach>
             </select><br><br></td><i class="fa fa-user"></i></div>
 </tr></table>
+
+			<div class="form-group ">
+				<input type="text" class="form-control" placeholder="Enter Stock "
+					name="stock" id="stock"> <i class="fa fa-user"></i>
+			</div>
+
+
 			<div class="form-group ">
 				<input type="text" class="form-control" placeholder="Product Price "
 					name="productPrice" id="productPrice"> <i class="fa fa-user"></i>

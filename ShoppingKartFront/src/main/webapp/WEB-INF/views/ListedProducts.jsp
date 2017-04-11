@@ -28,7 +28,7 @@ padding-bottom:9em;
 
 <c:forEach items="${productList}" var="product">
 <div class="img" margin-left: 7em;>
-<a href="ProductDetails?productId=${ product.productId}">
+<a href="ProductDetails?productId=${product.productId}">
 <img src="resources/images/productImages/${product.productId}.jpg" style="height:250px;width:250px">
 </a>
 <h4>Name : ${product.productName }</h4>

@@ -15,10 +15,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<h3>
+<marquee width="30%">
 <c:if test="${pageContext.request.userPrincipal.name != null }">
 			Welcome ${pageContext.request.userPrincipal.name}<br>
 			<br></c:if>
+		</marquee></h3>
 			
 			
 	<nav class="navbar navbar-inverse">
@@ -30,7 +32,7 @@
 			<li class="active"><a href="#">About Us</a></li>
 
 			
-			<li><a href="#">View Photos</a></li>
+			<li><a href="resources/images/productImages/${product.productId}.jpg">View Photos</a></li>
 			<li><a href="home">Home</a></li>
 			<li>
 			
@@ -40,6 +42,7 @@
 		
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+			
 			<c:if test="${pageContext.request.userPrincipal.name == null }">
 			<li><a href="RegistrationPage"><span
 					class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -49,9 +52,13 @@
 					
 			</c:if>
 			<c:if test="${pageContext.request.userPrincipal.name != null }">
+			<li><a href="myCart">My Cart</a></li>
 			<li><a href="j_spring_security_logout"><span
 					class="glyphicon glyphicon-user"></span> LogOut</a></li>
 			</c:if>
+			
+			
+		
 		</ul>
 	</div>
 	</nav>
