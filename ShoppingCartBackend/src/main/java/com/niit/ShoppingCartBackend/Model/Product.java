@@ -21,28 +21,20 @@ public class Product {
 
 	private String productName;
 	
+	private int stock;
+	
 	private String productDescription;
 	
 	private String category;
 	
 	private String supplier;
 	
-	private String productPrice;
+	private int productPrice;
 	
 	private String productRating;
 	
 	@Transient
 	private MultipartFile image;
-
-
-
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
 
 	public String getProductId() {
 		return productId;
@@ -60,28 +52,20 @@ public class Product {
 		this.productName = productName;
 	}
 
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
 	public String getProductDescription() {
 		return productDescription;
 	}
 
 	public void setProductDescription(String productDescription) {
 		this.productDescription = productDescription;
-	}
-
-	public String getProductPrice() {
-		return productPrice;
-	}
-
-	public void setProductPrice(String productPrice) {
-		this.productPrice = productPrice;
-	}
-
-	public String getProductRating() {
-		return productRating;
-	}
-
-	public void setProductRating(String productRating) {
-		this.productRating = productRating;
 	}
 
 	public String getCategory() {
@@ -99,6 +83,34 @@ public class Product {
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
 	}
+
+	public int getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public String getProductRating() {
+		return productRating;
+	}
+
+	public void setProductRating(String productRating) {
+		this.productRating = productRating;
+	}
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+	
+	
+
+
 
 	
 }

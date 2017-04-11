@@ -8,6 +8,8 @@ import com.niit.ShoppingCartBackend.Model.Cart;
 public interface CartDAO {
 	
 public List<Cart> list();
+
+public List<Cart> list(String mailid);
 	
 	public void save(Cart cart);
 

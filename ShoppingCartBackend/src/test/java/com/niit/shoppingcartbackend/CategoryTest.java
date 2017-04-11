@@ -76,7 +76,7 @@ public class CategoryTest {
 		
 		
 		product.setProductName("Rolex");
-		product.setProductPrice("2000");
+		product.setProductPrice(2000);
 		product.setProductDescription("this is a new brand");
 		product.setProductRating("2*");
 		

@@ -7,7 +7,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Shippingaddress;
+import com.niit.ShoppingCartBackend.Model.User;
 
 @Repository("ShippingaddressDAO")
 public class ShippingaddressDAOImpl implements ShippingaddressDAO {
@@ -96,6 +99,18 @@ public class ShippingaddressDAOImpl implements ShippingaddressDAO {
 	public void editShippingAddress(Shippingaddress shippingaddress) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public List<Shippingaddress> getUserByUserMailId(String userMailId) {
+		// TODO Auto-generated method stub
+		String hql = "from Shippingaddress where userMailId=" + "'" + userMailId + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Shippingaddress> list = (List<Shippingaddress>) query.list();
+		
+		return list;
+
 	}
 
 }

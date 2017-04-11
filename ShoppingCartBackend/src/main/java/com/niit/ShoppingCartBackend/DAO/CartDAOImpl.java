@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ShoppingCartBackend.Model.Cart;
+import com.niit.ShoppingCartBackend.Model.User;
 
 @Repository("CartDAO")
 public class CartDAOImpl implements CartDAO {
@@ -40,24 +41,30 @@ public class CartDAOImpl implements CartDAO {
 		return null;
 	}
 
+	@Transactional
 	public void save(Cart cart) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().save(cart);
 	}
 
+	@Transactional
 	public void update(Cart cart) {
 		// TODO Auto-generated method stub
-		
+		sessionFactory.getCurrentSession().update(cart);	
 	}
 
+	@Transactional
 	public Cart getByCartName(String cartName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Transactional
 	public void deleteByCartId(String cartId) {
 		// TODO Auto-generated method stub
-		
+		Cart cartToDelete = new Cart();
+		cartToDelete.setCartId(cartId);
+		sessionFactory.getCurrentSession().delete(cartToDelete);
 	}
 
 	public void deleteByCartName(String cartName) {
@@ -68,6 +75,18 @@ public class CartDAOImpl implements CartDAO {
 	public void deleteByProductName(String productName) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Transactional
+	public List<Cart> list(String mailid) {
+		// TODO Auto-generated method stub
+		String hql = "from Cart where userMailId=" + "'" + mailid + "'   and status = " + "'N'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Cart> list = (List<Cart>) query.list();
+		
+		return list;
 	}
 
 

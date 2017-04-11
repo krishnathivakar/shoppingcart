@@ -1,9 +1,13 @@
 package com.niit.ShoppingCartBackend.Model;
 
+import java.util.Date;
+
+import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import org.springframework.stereotype.Component;
 
@@ -16,15 +20,30 @@ public class Cart {
 	@GeneratedValue
 	private String cartId;
 
-	private String cartName;
-
-	private String cartDescription;
-
 	private String userId;
+	
+	private String userName;
+	
+	private String userMailId;
 
 	private String productId;
 
-	private String productDescription;
+	private String productName;
+	
+	private int productPrice;
+	
+	private int days;
+	  
+	@Generated(value = { "" })
+	@Temporal(javax.persistence.TemporalType.DATE)
+	private Date addDate = new java.sql.Date(new java.util.Date().getTime());
+	
+	private int total;
+	
+
+	private int quantity;
+	
+	private String status;
 
 	public String getCartId() {
 		return cartId;
@@ -32,22 +51,6 @@ public class Cart {
 
 	public void setCartId(String cartId) {
 		this.cartId = cartId;
-	}
-
-	public String getCartName() {
-		return cartName;
-	}
-
-	public void setCartName(String cartName) {
-		this.cartName = cartName;
-	}
-
-	public String getCartDescription() {
-		return cartDescription;
-	}
-
-	public void setCartDescription(String cartDescription) {
-		this.cartDescription = cartDescription;
 	}
 
 	public String getUserId() {
@@ -58,6 +61,22 @@ public class Cart {
 		this.userId = userId;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserMailId() {
+		return userMailId;
+	}
+
+	public void setUserMailId(String userMailId) {
+		this.userMailId = userMailId;
+	}
+
 	public String getProductId() {
 		return productId;
 	}
@@ -66,12 +85,64 @@ public class Cart {
 		this.productId = productId;
 	}
 
-	public String getProductDescription() {
-		return productDescription;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
+
+	public int getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public int getDays() {
+		return days;
+	}
+
+	public void setDays(int days) {
+		this.days = days;
+	}
+
+	public Date getAddDate() {
+		return addDate;
+	}
+
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	
+	
+	
 	
 }

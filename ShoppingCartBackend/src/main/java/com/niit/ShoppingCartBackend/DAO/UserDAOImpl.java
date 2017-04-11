@@ -32,7 +32,7 @@ public class UserDAOImpl  implements UserDAO{
 	@Transactional
 	public void save(User user) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().saveOrUpdate(user);
+		sessionFactory.getCurrentSession().save(user);
 		
 		
 	}

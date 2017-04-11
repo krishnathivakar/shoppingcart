@@ -3,6 +3,7 @@ package com.niit.ShoppingCartBackend.DAO;
 import java.util.List;
 
 import com.niit.ShoppingCartBackend.Model.Shippingaddress;
+import com.niit.ShoppingCartBackend.Model.User;
 
 public interface ShippingaddressDAO {
 	
@@ -15,6 +16,8 @@ public interface ShippingaddressDAO {
 		public Shippingaddress getByUserName(String username);
 		
 		public Shippingaddress getByUserId(int userid);
+		
+		public List<Shippingaddress> getUserByUserMailId(String userMailId);
 		
 		public void saveOrUpdate(Shippingaddress shippingaddress);
 		
