@@ -3,22 +3,25 @@ package com.niit.ShoppingCartBackend.DAO;
 import java.util.List;
 
 import com.niit.ShoppingCartBackend.Model.Billingaddress;
+import com.niit.ShoppingCartBackend.Model.Shippingaddress;
+import com.niit.ShoppingCartBackend.Model.User;
 
 public interface BillingaddressDAO {
 	
 	public List<Billingaddress> list();
-	
-	public Billingaddress getByBillId(int billid);		
-	
-	public Billingaddress getByBillingAddress(String billingaddress);	
-	
-    public Billingaddress getByContactNumber(int contactnumber);
-    
-	public void saveOrUpdate(Billingaddress billingaddress);
 		
-	public void delete(String BillingAddress);
+	public void delete(String billingaddress);
 	
-	public void editBillingAddress(Billingaddress billingaddress);
+	public void save(Billingaddress billingaddress);
+
+	public void update(Billingaddress billingaddress);
+	
+	public User getUserByUserId(String userId);
+	
+	public User getUserByUserMailId(String userMailId);
+
+	
+	
 
 
 }

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ShoppingCartBackend.Model.Billingaddress;
+import com.niit.ShoppingCartBackend.Model.Shippingaddress;
+import com.niit.ShoppingCartBackend.Model.User;
 
 @Repository("BillingaddressDAO")
 public class BillingaddressDAOImpl implements BillingaddressDAO {
@@ -65,13 +67,13 @@ private  SessionFactory sessionFactory;
 	}
 
 
-@Transactional
-	public void delete(String BillingAddress) {
-	Billingaddress billingaddressToDelete = new Billingaddress();
-	billingaddressToDelete.setBillingAddress(BillingAddress);
-	sessionFactory.getCurrentSession().delete(billingaddressToDelete);
-		
+	@Transactional
+	public void delete(String Billingaddress) {
+		Billingaddress billingaddressToDelete = new Billingaddress();
+		billingaddressToDelete.setBillingId(Billingaddress);
+		sessionFactory.getCurrentSession().delete(billingaddressToDelete);
 	}
+	
 
 @Transactional
 public void editBillingAddress(Billingaddress billingaddress) {
@@ -83,6 +85,26 @@ public void editBillingAddress(Billingaddress billingaddress) {
 public void saveOrUpdate(Billingaddress billingaddress) {
 	// TODO Auto-generated method stub
 	sessionFactory.getCurrentSession().saveOrUpdate(billingaddress);
+}
+
+public void save(Billingaddress billingaddress) {
+	// TODO Auto-generated method stub
+	
+}
+
+public void update(Billingaddress billingaddress) {
+	// TODO Auto-generated method stub
+	
+}
+
+public User getUserByUserId(String userId) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public User getUserByUserMailId(String userMailId) {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 }

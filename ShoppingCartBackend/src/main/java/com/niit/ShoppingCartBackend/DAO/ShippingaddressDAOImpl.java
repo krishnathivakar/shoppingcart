@@ -10,107 +10,88 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Shippingaddress;
-import com.niit.ShoppingCartBackend.Model.User;
 
 @Repository("ShippingaddressDAO")
 public class ShippingaddressDAOImpl implements ShippingaddressDAO {
-	
-	public ShippingaddressDAOImpl(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
 	@Autowired
 	private SessionFactory sessionFactory;
+
+	
+	
+	
+	public ShippingaddressDAOImpl (SessionFactory sessionFactory){
+		this.sessionFactory = sessionFactory;
+	}	
+
+	@Transactional
+	public List<Shippingaddress> list(String id) {
+		String hql = "from ShippingAddress where id='" + id + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Shippingaddress> list = (List<Shippingaddress>) query.list();
+		
+		return list;
+	}
+
+	@Transactional
+	public Shippingaddress get(String username) {
+		String hql = "from ShippingAddress where userName ='"+ username+"'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
+		
+		if (listShippingaddress != null && !listShippingaddress.isEmpty()){
+			return listShippingaddress.get(0);
+		}
+		return null;
+	}
+
+	@Transactional
+	public void save(Shippingaddress shippingaddress) {
+		sessionFactory.getCurrentSession().save(shippingaddress);
+	}
 	
 	@Transactional
-	public List<Shippingaddress> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Transactional
-	public Shippingaddress getByShippingAddress(String shippingaddress) {
-		String hql = "from Shippingaddress where ShippingAddress ='" + shippingaddress + "'";
-		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
-
-		if (listShippingaddress != null && !listShippingaddress.isEmpty()) {
-			return listShippingaddress.get(0);
-		}
-		return null;
-	}
-
-	@Transactional
-	public Shippingaddress getByShippingId(int shippingid) {
-		String hql = "from Shippingaddress where ShippingId='" + shippingid + "'";
-		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
-
-		if (listShippingaddress != null && !listShippingaddress.isEmpty()) {
-			return listShippingaddress.get(0);
-		}
-		return null;
-	}
-
-	@Transactional
-	public Shippingaddress getByUserName(String username) {
-		String hql = "from Shippingaddress where UserName='" + username + "'";
-		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
-
-		if (listShippingaddress != null && !listShippingaddress.isEmpty()) {
-			return listShippingaddress.get(0);
-		}
-		return null;
-	}
-
-	@Transactional
-	public Shippingaddress getByUserId(int userid) {
-		String hql = "from Shippingaddress where UserId='" + userid + "'";
-		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
-
-		if (listShippingaddress != null && !listShippingaddress.isEmpty()) {
-			return listShippingaddress.get(0);
-		}
-		return null;
-	}
-
-	@Transactional
-	public void saveOrUpdate(Shippingaddress shippingaddress) {
-		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().saveOrUpdate(shippingaddress);
-
+	public void update(Shippingaddress shippingaddress) {
+		sessionFactory.getCurrentSession().update(shippingaddress);
 	}
 
 	@Transactional
 	public void delete(String Shippingaddress) {
 		Shippingaddress shippingaddressToDelete = new Shippingaddress();
-		shippingaddressToDelete.setShippingAddress(Shippingaddress);
+		shippingaddressToDelete.setShippingId(Shippingaddress);
 		sessionFactory.getCurrentSession().delete(shippingaddressToDelete);
-		
 	}
 
+	
+
 	@Transactional
+	public Shippingaddress getByShippingId(String ShippingId) {
+		String hql = "from ShippingAddress where shippingId ='"+ ShippingId+"'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
+		
+		if (listShippingaddress != null && !listShippingaddress.isEmpty()){
+			return listShippingaddress.get(0);
+		}
+		return null;
+	}
+
 	public void editShippingAddress(Shippingaddress shippingaddress) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public List<Shippingaddress> getUserByUserMailId(String userMailId) {
+	@Transactional
+	public List<Shippingaddress> getUserByUserMailId(String email) {
 		// TODO Auto-generated method stub
-		String hql = "from Shippingaddress where userMailId=" + "'" + userMailId + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		
-		@SuppressWarnings("unchecked")
-		List<Shippingaddress> list = (List<Shippingaddress>) query.list();
-		
-		return list;
-
+				String hql = "from Shippingaddress where userMailId=" + "'" + email + "'   and status = " + "'N'";
+				Query query = sessionFactory.getCurrentSession().createQuery(hql);
+				
+				@SuppressWarnings("unchecked")
+				List<Shippingaddress> list = (List<Shippingaddress>) query.list();
+				
+				return list;
 	}
 
 }

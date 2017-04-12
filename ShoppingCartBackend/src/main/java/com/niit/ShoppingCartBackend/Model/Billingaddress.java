@@ -1,5 +1,6 @@
 package com.niit.ShoppingCartBackend.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,48 +13,81 @@ import org.springframework.stereotype.Component;
 @Component
 public class Billingaddress {
 	
-@Id
-@GeneratedValue
-	private int BillId;
-	private String BillingAddress;
-	private int ContactNumber;
+	@Id
+	@Column(name = "billingId")
+	@GeneratedValue
+	private String billingId;
 	
-	/**
-	 * @return the contactNumber
-	 */
-	public int getContactNumber() {
-		return ContactNumber;
+	private String userId;
+
+	private String userName;
+
+	private String mobileNumber;
+
+	private String userMailId;
+
+	private String userAddress;
+
+	private String userCityCode;
+
+	public String getBillingId() {
+		return billingId;
 	}
-	/**
-	 * @param contactNumber the contactNumber to set
-	 */
-	public void setContactNumber(int contactNumber) {
-		ContactNumber = contactNumber;
+
+	public void setBillingId(String billingId) {
+		this.billingId = billingId;
 	}
-	/**
-	 * @return the billId
-	 */
-	public int getBillId() {
-		return BillId;
+
+	
+	
+	public String getUserId() {
+		return userId;
 	}
-	/**
-	 * @param billId the billId to set
-	 */
-	public void setBillId(int billId) {
-		BillId = billId;
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	/**
-	 * @return the billingAddress
-	 */
-	public String getBillingAddress() {
-		return BillingAddress;
+
+	public String getUserName() {
+		return userName;
 	}
-	/**
-	 * @param billingAddress the billingAddress to set
-	 */
-	public void setBillingAddress(String billingAddress) {
-		BillingAddress = billingAddress;
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getUserMailId() {
+		return userMailId;
+	}
+
+	public void setUserMailId(String userMailId) {
+		this.userMailId = userMailId;
+	}
+
+	public String getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+
+	public String getUserCityCode() {
+		return userCityCode;
+	}
+
+	public void setUserCityCode(String userCityCode) {
+		this.userCityCode = userCityCode;
+	}
+	
 	
 
 }
