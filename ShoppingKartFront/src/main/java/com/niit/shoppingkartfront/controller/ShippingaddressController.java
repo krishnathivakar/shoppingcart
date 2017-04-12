@@ -25,7 +25,7 @@ public class ShippingaddressController {
 	
 	@RequestMapping("addShippingaddress")
 	public String addShippingaddress(@ModelAttribute Shippingaddress shippingaddress){
-		shippingaddressDAO.saveOrUpdate(shippingaddress);
+		shippingaddressDAO.save(shippingaddress);
 		return "ViewShippingaddress";
 		
 	}

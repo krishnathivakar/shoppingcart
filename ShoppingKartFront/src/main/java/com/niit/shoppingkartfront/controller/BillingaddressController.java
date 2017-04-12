@@ -17,7 +17,7 @@ public class BillingaddressController {
 	
 	@RequestMapping("addBillingaddress")
 	public String addBillingaddress(@ModelAttribute Billingaddress billingaddress){
-		billingaddressDAO.saveOrUpdate(billingaddress);
+		billingaddressDAO.save(billingaddress);
 		return "ViewBillingaddress";
 		
 	}
