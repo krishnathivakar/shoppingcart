@@ -35,14 +35,34 @@ public class CartController {
 	private ProductDAO productDAO;
 	
 	
-	Random t = new Random();
-	int day = 2 + t.nextInt(7);
+	
 	
 	
 	@RequestMapping("addToCart")
 	public String addCart(@RequestParam("productId") String productId, Principal p,Model model){
+		
 		Product product = productDAO.getProductctById(productId);
+		
 		User user = userDAO.getUserByUserMailId(p.getName());
+		
+		Cart crt=cartDAO.getByUserandProduct(p.getName(), productId);
+		
+		
+		if(product.getStock()>0){
+			
+			if(cartDAO.itemAlreadyExist(p.getName(), productId, true))
+			{
+				int qty = crt.getQuantity() + 1;
+				crt.setQuantity(qty);
+				crt.setTotal(product.getProductPrice()*qty);
+				cartDAO.update(crt);
+			}
+			
+		else {
+			
+		
+		Random t = new Random();
+		int day = 2 + t.nextInt(7);
 		
 		cart.setUserId(user.getUserId());
 		cart.setUserName(user.getUserName());
@@ -56,9 +76,17 @@ public class CartController {
 		cart.setDays(day);
 		
 		cartDAO.save(cart);
-		cartDAO.update(cart);
+
+		}
 		return "redirect:myCart";
+		}
 		
+		else{
+			model.addAttribute("product", product);
+			model.addAttribute("ProductDetails", true);
+			model.addAttribute("msg", "PRODUCT OUT OF STOCK");
+			return "UserLogin";
+		}
 	}
 	
 	@RequestMapping("ProductDetails")

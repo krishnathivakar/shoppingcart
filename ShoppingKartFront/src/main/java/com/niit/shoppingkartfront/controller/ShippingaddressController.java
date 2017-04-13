@@ -31,11 +31,11 @@ public class ShippingaddressController {
 	}
 	
 	@RequestMapping("proceed")
-	public String proceedToDelivery(Principal p,Model model ) {
+	public String proceedToDelivery(Principal p, Model model ) {
 		String email = p.getName();
-		List<Shippingaddress> shippingaddressList = shippingaddressDAO.getUserByUserMailId(email);
-		model.addAttribute("shippingaddressList", shippingaddressList);
+		List<Shippingaddress> shippingList = shippingaddressDAO.getUserByUserMailId(email);
+		model.addAttribute("shippingList", shippingList);
 		model.addAttribute("shippingaddressList", true);
-		return "";
+		return "UserLogin";
 	}
 }

@@ -10,7 +10,7 @@
 <body>
 
 <%@include file="/WEB-INF/views/NavBar.jsp"%>
-<%@include file="/WEB-INF/views/ListedProducts.jsp"%>
+
 
 
 
@@ -21,7 +21,9 @@
 <c:when test="${not empty myCartClicked }">
 <%@include file="/WEB-INF/views/myCart.jsp"%>
 </c:when>
-
+<c:when test="${not empty shippingaddressList }">
+<%@include file="/WEB-INF/views/ViewShipping.jsp"%>
+</c:when>
 <c:otherwise>
 <%@include file="/WEB-INF/views/ListedProducts.jsp"%>
 </c:otherwise>

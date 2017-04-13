@@ -44,7 +44,13 @@ td
 </table>
 <br>
 <center>
+<c:if test="${pageContext.request.userPrincipal.name != null }">
 <button type="submit" class="log-btn" ><a href="proceed">Proceed to Delivery</a></button>
+</c:if>
+<c:if test="${pageContext.request.userPrincipal.name == null }">
+<button type="submit" class="log-btn" ><a href="LoginPage">Proceed to Delivery</a></button>
+</c:if>
+
 <button type="submit" class="log-btn"><a href=""> Grand Total </a></button>
 
 </center>

@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,7 +37,13 @@ padding-bottom:9em;
 <br>
 <h3>Product Price</h3><h6 style="float:right">${product.productPrice}</h6>
 <br><br>
+<h2 style="color: red;">${msg}</h2>
+<c:if test="${pageContext.request.userPrincipal.name != null }">
 <button type="submit" class="log-btn" ><a href="addToCart?productId=${product.productId}">Proceed to Cart</a></button>
+</c:if>
+<c:if test="${pageContext.request.userPrincipal.name == null }">
+<button type="submit" class="log-btn" ><a href="LoginPage">Proceed to Cart</a></button>
+</c:if>
 <button type="submit" class="log-btn">Back</button>
 
 </div>

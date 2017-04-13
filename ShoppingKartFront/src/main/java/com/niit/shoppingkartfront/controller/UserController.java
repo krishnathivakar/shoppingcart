@@ -43,7 +43,14 @@ public class UserController {
 
 	@RequestMapping("addNewUser")
 	public String addUser(@ModelAttribute User user, @ModelAttribute Shippingaddress shippingaddress, @ModelAttribute Billingaddress billingaddress, Model model) {
-
+		String message;
+		if(userDAO.isAllReadyRegister(user.getUserMailId(), true)){
+			message = "Email ID alreay Registered!! Register With Different ID";
+		}
+		else
+		{
+			
+		
 		user.setEnabled(true);
 		role.setUserMailId(user.getUserMailId());
 		role.setRole("ROLE_USER");
@@ -61,8 +68,11 @@ public class UserController {
 		
 		billingaddressDAO.save(billingaddress);
 		shippingaddressDAO.save(shippingaddress);
+		
+		message = "You Have Been Successfully Registered";
+		}	
 		model.addAttribute("loginButtonClicked", true);
-		model.addAttribute("message", "Sucessfully Registered");
+		model.addAttribute("message", message);
 		
 		return "home";
 
