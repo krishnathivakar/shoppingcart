@@ -62,7 +62,7 @@ public class UserDAOImpl  implements UserDAO{
 	@Transactional
 	public User getUserByUserName(String userName) {
 		// TODO Auto-generated method stub
-		String hql = "from User where Username ='" + userName + "'";
+		String hql = "from User where userName ='" + userName + "'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<User> listUser = (List<User>) (query).list();
@@ -147,6 +147,22 @@ public class UserDAOImpl  implements UserDAO{
 		
 	}
 
+
+	@Transactional
+	public boolean isAllReadyRegister(String userMailId, boolean b) {
+		// TODO Auto-generated method stub
+		String hql = "from User where userMailId ='"+ userMailId +"'";
+		
+		
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) query.list();
+		if (list != null && !list.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+		
 
 	
 

@@ -27,6 +27,8 @@ public interface UserDAO {
 	public void deleteByUserMobileNumber(String mobileNumber);
 
 	public void deleteByUserMailId(String userMailId);
+	
+	public boolean isAllReadyRegister(String userMailId, boolean b);
 
 
 		

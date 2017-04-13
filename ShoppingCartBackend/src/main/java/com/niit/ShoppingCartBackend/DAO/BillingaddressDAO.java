@@ -8,7 +8,7 @@ import com.niit.ShoppingCartBackend.Model.User;
 
 public interface BillingaddressDAO {
 	
-	public List<Billingaddress> list();
+	public List<Billingaddress> list(String id);
 		
 	public void delete(String billingaddress);
 	
@@ -18,7 +18,7 @@ public interface BillingaddressDAO {
 	
 	public User getUserByUserId(String userId);
 	
-	public User getUserByUserMailId(String userMailId);
+	public List<Billingaddress> getUserByUserMailId(String userMailId);
 
 	
 	

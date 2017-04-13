@@ -88,6 +88,40 @@ public class CartDAOImpl implements CartDAO {
 		
 		return list;
 	}
+	
+	@Transactional
+	public boolean itemAlreadyExist(String mailid, String productId, boolean b) {
+		String hql = "from Cart where userMailId= '" + mailid + "' and " + " productId ='" + productId+"'";
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Cart> list = (List<Cart>) query.list();
+		if (list != null && !list.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+
+
+	@Transactional
+	public Cart getByUserandProduct(String userId, String productId) {
+		String hql = "from Cart where userMailId= '" + userId + "' and " + " productId ='" + productId+"'";
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Cart> listCart = (List<Cart>) query.list();
+		
+		if (listCart != null && !listCart.isEmpty()){
+			return listCart.get(0);
+		}
+		return null;
+	}
+	
+	@Transactional
+	public Long getTotalAmount(String id) {
+	String hql = "select sum(total) from Cart where userMailId = " + "'" + id + "'" + "and status = '" + "N" +"'";
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	Long sum = (Long) query.uniqueResult();
+		return sum;
+	}
 
 
 }	
