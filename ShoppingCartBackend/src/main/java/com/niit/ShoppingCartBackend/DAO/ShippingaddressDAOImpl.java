@@ -25,7 +25,7 @@ public class ShippingaddressDAOImpl implements ShippingaddressDAO {
 
 	@Transactional
 	public List<Shippingaddress> list(String id) {
-		String hql = "from ShippingAddress where id='" + id + "'";
+		String hql = "from Shippingaddress where shippingId='" + id + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Shippingaddress> list = (List<Shippingaddress>) query.list();
@@ -35,7 +35,7 @@ public class ShippingaddressDAOImpl implements ShippingaddressDAO {
 
 	@Transactional
 	public Shippingaddress get(String userName) {
-		String hql = "from ShippingAddress where userName ='"+ userName+"'";
+		String hql = "from Shippingaddress where userName ='"+ userName+"'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();
@@ -67,7 +67,7 @@ public class ShippingaddressDAOImpl implements ShippingaddressDAO {
 
 	@Transactional
 	public Shippingaddress getByShippingId(String ShippingId) {
-		String hql = "from ShippingAddress where shippingId ='"+ ShippingId+"'";
+		String hql = "from Shippingaddress where shippingId ='"+ ShippingId+"'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List<Shippingaddress> listShippingaddress = (List<Shippingaddress>) (query).list();

@@ -2,6 +2,7 @@ package com.niit.ShoppingCartBackend.DAO;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,11 @@ public class CartDAOImpl implements CartDAO {
 	@Transactional
 	public List<Cart> list() {
 		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings({ "unchecked" })
+		List<Cart> listCart = (List<Cart>) sessionFactory.getCurrentSession().createCriteria(Cart.class)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		return listCart;
+		
 	}
 
 	@Transactional

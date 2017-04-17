@@ -43,7 +43,18 @@ public class Cart {
 
 	private int quantity;
 	
+	private String shippingId;
+	
 	private String status;
+
+	
+	public String getShippingId() {
+		return shippingId;
+	}
+
+	public void setShippingId(String shippingId) {
+		this.shippingId = shippingId;
+	}
 
 	public String getCartId() {
 		return cartId;
