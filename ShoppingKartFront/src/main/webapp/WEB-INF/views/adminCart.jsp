@@ -1,4 +1,3 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,20 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<style type="text/css">
-td
-{
-    padding:0 20px 0 20px;
-}
-</style>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
-
 <body>
+
 <div class="login-form">
 			<h1>Product Added To Cart</h1>
 <div style="float: left; margin-left: 5em;">
@@ -33,7 +20,10 @@ function goBack() {
 <td>quantity</td>
 <td>productPrice</td>
 <td>total</td>
-<td>Delete</td>
+<td>User Name</td>
+<td>User ID</td>
+<td>Product Id </td>
+<td> Date </td>
 </tr>
 </thead>
 <c:forEach items="${cartList}" var="cart" varStatus="status">
@@ -44,35 +34,26 @@ function goBack() {
 <td>${cart.quantity}</td>
 <td>${cart.productPrice }</td>
 <td>${cart.total}</td>
-<td><a href="deleteCart?cartId=${cart.cartId}">Delete</a></td>
-
+<td>${cart.userName }</td>
+<td>${cart.userId }</td>
+<td>${cart.productId }</td>
+<td>${cart.addDate }</td>
 </tr>
 </c:forEach></div>
 
-<tr>
-<td></td>
-<td></td>
-<td colspan="3">Grand Total :</td>
-</h4>
-<td>${total}</td>
-</tr>
 
 </table>
 <br>
 <center>
-<c:if test="${pageContext.request.userPrincipal.name != null }">
-<button type="submit" class="log-btn" ><a href="proceed">Proceed to Delivery</a></button>
-</c:if>
-<c:if test="${pageContext.request.userPrincipal.name == null }">
-<button type="submit" class="log-btn" ><a href="LoginPage">Proceed to Delivery</a></button>
-</c:if>
 
-<button type="submit" class="log-btn" onclick="goBack()">Go Back</button>
+<button type="submit" class="log-btn" ><a href="#">Ok</a></button>
 
 </center>
 
 
 </div>
+
+
 
 </body>
 </html>

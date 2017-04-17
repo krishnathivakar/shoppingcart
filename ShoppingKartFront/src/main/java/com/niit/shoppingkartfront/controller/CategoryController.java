@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.ShoppingCartBackend.DAO.CartDAO;
 import com.niit.ShoppingCartBackend.DAO.CategoryDAO;
+import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Category;
 
 
@@ -17,6 +19,8 @@ public class CategoryController {
 	
 		@Autowired
 		private CategoryDAO categoryDAO;
+		@Autowired
+		private CartDAO cartDAO;
 		
 		@RequestMapping("categoryPage")
 		public String newCategory(Model model) {
@@ -56,6 +60,15 @@ public class CategoryController {
 		public String afterEdit(@ModelAttribute Category category){
 			categoryDAO.update(category);
 			return "redirect:ViewCategory";
+			
+		}
+		@RequestMapping("adminCart")
+		public String adminCart(Model model){
+			List<Cart> cartList = cartDAO.list();
+			model.addAttribute("cartList", cartList);
+			model.addAttribute("adminCartClicked", true);
+			return "AdminLogin";
+			
 			
 		}
 		@ModelAttribute

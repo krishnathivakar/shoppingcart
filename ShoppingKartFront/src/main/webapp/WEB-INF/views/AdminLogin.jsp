@@ -37,8 +37,11 @@
 					<ul class="dropdown-menu">
 						<li><a href="ViewSupplier">View</a></li>
 						<li><a href="SupplierPage">Add</a></li>
-	
+					<li><a href="adminCart">Cart</a> </li>
 			</ul></li></div>
+			<div style="float: left; margin-left: 7em;">
+			<li><a href="adminCart">Cart</a> </li>
+			</div>
 			</div></ul>
 		<!-- </div>
 	</div>
@@ -54,10 +57,6 @@
 		<c:when test="${not empty editCategoryClicked }">
 			<%@include file="/WEB-INF/views/EditCategory.jsp"%>
 		</c:when>
-
-		<%-- <c:when test="${not empty viewProductClicked }">
-  <%@include file="/WEB-INF/views/ViewProduct.jsp" %>
-  </c:when> --%>
 
 		<c:when test="${not empty addProductClicked }">
 			<%@include file="/WEB-INF/views/ProductForm.jsp"%>
@@ -84,7 +83,9 @@
 		<c:when test="${not empty editSupplierClicked }">
 			<%@include file="/WEB-INF/views/EditSupplier.jsp"%>
 		</c:when>
-
+<c:when test="${not empty adminCartClicked }">
+			<%@include file="/WEB-INF/views/adminCart.jsp"%>
+		</c:when>
 		<c:otherwise>
   </c:otherwise>
 

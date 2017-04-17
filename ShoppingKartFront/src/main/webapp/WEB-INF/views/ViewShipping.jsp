@@ -14,16 +14,23 @@
     height: 400px;    
     padding: 50px;
     border: 1px solid red;
+    float:left;
 }
 </style>
 <body>
+<h2><a href="newshipping" style="float:right;">create new address</a></h2>
 <div class="login-form">
 <h1>Select Delivery Address </h1>
 
-<div class="div2">
+
+
 
 
 <c:forEach items="${shippingList}" var="shipping">
+<div class="div2">
+<a href="editShipping?shippingId=${shipping.shippingId}" style="float:right;"><span class="glyphicon glyphicon-pencil"></span></a>
+<a href="deleteShipping?shippingId=${shipping.shippingId}" style="float:right;margin-right: 1em;"><span class="glyphicon glyphicon-trash"></span></a>
+
 <h2>Name</h2>
 <h4>${shipping.userName}</h4>
 <hr>
@@ -34,11 +41,10 @@ ${shipping.userCityCode}</h5>
 <h4>Mobile Number</h4>
 <h6>${shipping.mobileNumber}</h6>
 <hr>
-<a href="editShipping?shippingId=${shipping.shippingId}">EDIT</a>
-<a href="deleteShipping?shippingId=${shipping.shippingId}">DELETE</a>
+<button type="button" value="submit"> <a href="deliverAdress?shippingId=${shipping.shippingId}">Deliver Here</a></button>
 
-</c:forEach>
 </div>
+</c:forEach>
 </div>
 </body>
 </html>

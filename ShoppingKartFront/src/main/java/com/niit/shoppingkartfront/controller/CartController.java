@@ -78,6 +78,11 @@ public class CartController {
 		cartDAO.save(cart);
 
 		}
+			int stc = product.getStock() - 1;
+			product.setStock(stc);
+			productDAO.update(product);
+			
+			
 		return "redirect:myCart";
 		}
 		
@@ -106,6 +111,8 @@ public class CartController {
 	public String myCart(Principal principal, Model model){
 		String email = principal.getName();
 		List<Cart> cartList = cartDAO.list(email);
+		Long sum = cartDAO.getTotalAmount(email);
+		model.addAttribute("total", sum);
 		model.addAttribute("cartList", cartList);
 		model.addAttribute("myCartClicked", true);
 		
@@ -114,6 +121,17 @@ public class CartController {
 	
 	@RequestMapping("deleteCart")
 	public String deleteCart(@RequestParam("cartId") String cartId){
+		
+		Cart cart = cartDAO.getByCartId(cartId);		
+
+		Product product = productDAO.getProductctById(cart.getProductId());
+		
+		int qrt = cart.getQuantity();
+		int stc = product.getStock();
+		
+		product.setStock(stc + qrt);
+		productDAO.update(product);
+		
 		cartDAO.deleteByCartId(cartId);
 		return "redirect:myCart";
 	}

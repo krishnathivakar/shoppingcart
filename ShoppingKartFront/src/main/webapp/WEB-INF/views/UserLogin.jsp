@@ -24,6 +24,15 @@
 <c:when test="${not empty shippingaddressList }">
 <%@include file="/WEB-INF/views/ViewShipping.jsp"%>
 </c:when>
+<c:when test="${not empty EditShippingClicked }">
+<%@include file="/WEB-INF/views/EditShippingAddress.jsp"%>
+</c:when>
+<c:when test="${not empty newShippingClicked }">
+<%@include file="/WEB-INF/views/ShippingAddress.jsp"%>
+</c:when>
+<c:when test="${not empty Successfully }">
+<%@include file="/WEB-INF/views/SuccessMessage.jsp"%>
+</c:when>
 <c:otherwise>
 <%@include file="/WEB-INF/views/ListedProducts.jsp"%>
 </c:otherwise>

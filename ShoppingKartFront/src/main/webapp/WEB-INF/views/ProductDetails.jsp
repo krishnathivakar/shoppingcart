@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 .img {
-padding-top: 9em;
+padding-top: 5em;
 position: relative;
 float: left;
 width: 5%;
@@ -21,7 +21,11 @@ margin-left: 7em;
 padding-bottom:9em;
 }
 </style>
-
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
 </head>
 <body>
@@ -32,10 +36,12 @@ padding-bottom:9em;
 <img src="resources/images/productImages/${product.productId}.jpg" width="550" height="330">
 </div></td>
 <td>
-<div style="float: left; margin-left: 7em;">
-<h2>Product Description</h2><h5 style="float:right">${product.productDescription}</h5>
+<div style="float: left; margin-left: 7em; margin-right:15em">
+<h5>Product Description</h5><h3 style="margin-right:10em">${product.productDescription}</h3>
 <br>
-<h3>Product Price</h3><h6 style="float:right">${product.productPrice}</h6>
+<h5>Product Price</h5><h4 style="float:right">${product.productPrice}</h4>
+<br>
+<h5>Stock</h5><h4  style="float:right">${product.stock }</h4>
 <br><br>
 <h2 style="color: red;">${msg}</h2>
 <c:if test="${pageContext.request.userPrincipal.name != null }">
@@ -44,7 +50,7 @@ padding-bottom:9em;
 <c:if test="${pageContext.request.userPrincipal.name == null }">
 <button type="submit" class="log-btn" ><a href="LoginPage">Proceed to Cart</a></button>
 </c:if>
-<button type="submit" class="log-btn">Back</button>
+<button type="submit" class="log-btn" onclick="goBack()">GO Back</button>
 
 </div>
 </td>
