@@ -5,70 +5,73 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Border Animation Effect with SVG</title>
+		<meta name="description" content="Border Animation Effect: Recreating the effect seen on carlphilippebrenner.com with SVG" />
+		<meta name="keywords" content="svg, border effect, animated border, line, grid item, hover, css" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="resources/css/component.css" />
+
 <title>Insert title here</title>
 </head>
 <style>
-.container {
-  position: relative;
-  width: 107%;
-  margin-left: 7em;
-  
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 100%;
-  right: 0;
-  background-color: #008CBA;
-  overflow: hidden;
-  width: 0;
-  height: 100%;
-  transition: .5s ease;
-}
-
-.container:hover .overlay {
-  width: 100%;
-  left: 0;
-}
-
-.text {
-  white-space: nowrap; 
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
  .img {
-padding-top: 6em;
+
 position: relative;
 float: left;
-width: 250px;
-height: 250px;
-background-postion:100% 100%;
-background-repeat:no-repeat;
-backgroun-size:cover;
-margin-left: 4em;
 
-padding-bottom:9em;
+
+background-postion:100% 100%;
+
+
+margin: 3px 3px 3px 3px ;
+
+
  }
 
 
 </style>
 <body style="margin-bottom:20px">
+<div class="container">
+			<!-- Top Navigation -->
+			
+			<header class="codrops-header">
+				<h1>List Of Products</h1>
+				
+			</header>
+			<section class="demo-2">
+			<c:forEach items="${productList}" var="product">
+			<div class="img"	style="float:left; margin-left: 5em;">
+				<h2>Name : ${product.productName }</h2>
+				<a href="ProductDetails?productId=${product.productId}">
+				
+				<div class="grid">
+					<div class="box">
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+							<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+							<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+							<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+							<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+						</svg>
+						<img src="resources/images/productImages/${product.productId}.jpg" width="280" height="380">
+						<span>Price : ${product.productPrice }</span>
+						<span>Description : ${product.productDescription }</span>
+					</div>
+					</div>
+					</div>
+					</a>
+					</c:forEach>
+					
+				</div><!-- /grid -->
+			</section>
+			
+		</div><!-- /container -->
 
-
-<c:forEach items="${productList}" var="product">
+<%-- <c:forEach items="${productList}" var="product">
 <div class="img"	style=" margin-left: 7em;">
 <a href="ProductDetails?productId=${product.productId}">
 <div class="container">
@@ -80,13 +83,6 @@ padding-bottom:9em;
   </div>
 </div>
 </a>
-</div>
-</c:forEach>
-<%--<div class="img" margin-left: 7em;> <a href="ProductDetails?productId=${product.productId}">
-<img src="resources/images/productImages/${product.productId}.jpg" style="height:250px;width:250px">
-</a>
-<h4>Name : ${product.productName }</h4>
-<h6>Price : ${product.productPrice }</h6>
 </div>
 </c:forEach>
  --%>

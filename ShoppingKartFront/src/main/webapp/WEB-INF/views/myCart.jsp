@@ -21,24 +21,25 @@ function goBack() {
 </script>
 
 <body>
+<div class="container">
 <div class="login-form">
 			<h1>Product Added To Cart</h1>
 <div style="float: left; margin-left: 5em;">
-<table  style="margin-left: 5em">
+<table class="table table-hover" style="margin-left: 5em">
 <thead>
 <tr>
-<td>Serial no</td>
-<td>Image Of Product</td>
-<td>productname</td>
-<td>quantity</td>
-<td>productPrice</td>
-<td>total</td>
-<td>Delete</td>
+<th>Serial no</th>
+<th>Image Of Product</th>
+<th>productname</th>
+<th>quantity</th>
+<th>productPrice</th>
+<th>total</th>
+<th>Delete</th>
 </tr>
 </thead>
 <c:forEach items="${cartList}" var="cart" varStatus="status">
 <tr>
-<td>${status.count}</td>
+<th scope="row">${status.count}</td>
 <td><img src="resources/images/productImages/${cart.productId}.jpg" style="height:150px;width:150px"></td>
 <td>${cart.productName }</td>
 <td>${cart.quantity}</td>
@@ -49,12 +50,12 @@ function goBack() {
 </tr>
 </c:forEach></div>
 
-<tr>
+<tr scope="row">
 <td></td>
 <td></td>
 <td colspan="3">Grand Total :</td>
-</h4>
 <td>${total}</td>
+<td></td>
 </tr>
 
 </table>
@@ -73,6 +74,6 @@ function goBack() {
 
 
 </div>
-
+</div>
 </body>
 </html>

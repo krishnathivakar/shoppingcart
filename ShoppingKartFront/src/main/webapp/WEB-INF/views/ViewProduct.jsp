@@ -14,22 +14,25 @@
 
 
 
-<table border="2">
-
-<tr><td>serial no</td>
-<td>productId</td>
-<td>productName</td>
-<td>productDescription</td>
-<td>productPrice</td>
-<td>productRating</td>
-<td>Edit</td>
-<td>Delete</td>
+<table class="table table-striped" border="2">
+<thead>
+<tr>
+<th>serial no</th>
+<th>productId</th>
+<th>productName</th>
+<th>productDescription</th>
+<th>productPrice</th>
+<th>productRating</th>
+<th>Edit</th>
+<th>Delete</th>
 </tr>
-
+</thead>
+<tbody>
+    
 <c:forEach items="${productList}" var="product" varStatus="status">
 
 <tr>
-<td>${status.count}</td>
+      <th scope="row">${status.count}</th>
 <td>${product.productId }</td>
 <td>${product.productName }</td>
 <td>${product.productDescription }</td>
@@ -40,7 +43,7 @@
 
 </tr>
 </c:forEach>
-
+</tbody>
 
 
 

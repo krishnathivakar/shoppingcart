@@ -13,22 +13,24 @@
 
 
 
-<table border="2">
-
-<tr><td>serial no</td>
-<td>supplierId</td>
-<td>supplierName</td>
-<td>supplierDescription</td>
-<td>supplierRating</td>
-<td>supplierLocation</td>
-<td>Edit</td>
-<td>Delete</td>
+<table class="table" border="2">
+<thead class="thead-inverse">
+<tr>
+<th>serial no</th>
+<th>supplierId</th>
+<th>supplierName</th>
+<th>supplierDescription</th>
+<th>supplierRating</th>
+<th>supplierLocation</th>
+<th>Edit</th>
+<th>Delete</th>
 </tr>
-
+</thead>
+<tbody>
 <c:forEach items="${supplierList}" var="supplier" varStatus="status">
 
 <tr>
-<td>${status.count}</td>
+<th scope="row">${status.count}</th>
 <td>${supplier.supplierId }</td>
 <td>${supplier.supplierName }</td>
 <td>${supplier.supplierDescription }</td>
@@ -38,7 +40,7 @@
 <td><a href="deleteSupplier?supplierId=${supplier.supplierId }">Delete</a></td>
 </tr>
 </c:forEach>
-
+</tbody>
 </table>
 </div>
 </body>

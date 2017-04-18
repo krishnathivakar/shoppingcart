@@ -11,20 +11,21 @@
 <div class="login-form">
 			<h1>List of Category</h1>
 
-<table border="2">
-
-<tr><td>Serial no</td>
-<td>categoryId</td>
-<td>categoryName</td>
-<td>categoryDescription</td>
-<td>Edit</td>
-<td>Delete</td>
+<table class="table" border="2">
+<thead>
+<tr>
+<th>Serial no</th>
+<th>categoryId</th>
+<th>categoryName</th>
+<th>categoryDescription</th>
+<th>Edit</th>
+<th>Delete</th>
 </tr>
-
+</thead>
 <c:forEach items="${categoryList}" var="category" varStatus="status">
 
 <tr>
-<td>${status.count}</td>
+<th scope="row">${status.count}</th>
 <td>${category.categoryId }</td>
 <td>${category.categoryName }</td>
 <td>${category.categoryDescription }</td>
