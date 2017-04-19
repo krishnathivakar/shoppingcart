@@ -28,7 +28,7 @@ float: left;
 background-postion:100% 100%;
 
 
-margin: 3px 3px 3px 3px ;
+margin: 3px 3px 30px 3px ;
 
 
  }
@@ -45,7 +45,7 @@ margin: 3px 3px 3px 3px ;
 			</header>
 			<section class="demo-2">
 			<c:forEach items="${productList}" var="product">
-			<div class="img"	style="float:left; margin-left: 5em;">
+			<div class="img"	style="float:left;">
 				<h2>Name : ${product.productName }</h2>
 				<a href="ProductDetails?productId=${product.productId}">
 				
@@ -57,7 +57,7 @@ margin: 3px 3px 3px 3px ;
 							<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
 							<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
 						</svg>
-						<img src="resources/images/productImages/${product.productId}.jpg" width="280" height="380">
+						<img src="resources/images/productImages/${product.productId}.jpg" width="290" height="380">
 						<span>Price : ${product.productPrice }</span>
 						<span>Description : ${product.productDescription }</span>
 					</div>

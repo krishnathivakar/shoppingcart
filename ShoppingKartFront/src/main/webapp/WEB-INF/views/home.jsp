@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body  style="margin-bottom:10%">
+<body style="margin:0px 5px 0px 5px;">
 	<%@include file="/WEB-INF/views/NavBar.jsp"%>
 	
-	
+
 	
 	<c:choose>
 	<c:when test="${not empty registerButtonClicked}">

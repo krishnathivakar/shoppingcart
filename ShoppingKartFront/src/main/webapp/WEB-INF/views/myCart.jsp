@@ -21,6 +21,15 @@ function goBack() {
 </script>
 
 <body>
+<c:if test="${pageContext.request.userPrincipal.name != null }">
+<button type="submit" class="log-btn" ><a href="proceed" float:right" >Proceed to Delivery</a></button>
+</c:if>
+<c:if test="${pageContext.request.userPrincipal.name == null }">
+<button type="submit" class="log-btn" ><a href="LoginPage" float="right">Proceed to Delivery</a></button>
+</c:if>
+
+<button type="submit" class="log-btn" onclick="goBack()" float="left">Go Back</button>
+
 <div class="container">
 <div class="login-form">
 			<h1>Product Added To Cart</h1>
@@ -61,19 +70,13 @@ function goBack() {
 </table>
 <br>
 <center>
-<c:if test="${pageContext.request.userPrincipal.name != null }">
-<button type="submit" class="log-btn" ><a href="proceed">Proceed to Delivery</a></button>
-</c:if>
-<c:if test="${pageContext.request.userPrincipal.name == null }">
-<button type="submit" class="log-btn" ><a href="LoginPage">Proceed to Delivery</a></button>
-</c:if>
-
-<button type="submit" class="log-btn" onclick="goBack()">Go Back</button>
 
 </center>
 
 
 </div>
-</div>
+</div></div>
+
 </body>
+
 </html>

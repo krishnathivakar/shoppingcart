@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Successfully Done</h1>
+<h2 style="margin-left: 10em;">Your Product will be Delivered in few days</h2>
 </body>
 </html>

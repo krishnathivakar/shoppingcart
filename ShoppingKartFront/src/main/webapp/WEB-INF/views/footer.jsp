@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-<nav class="navbar navbar-inverse" style="position:fixed; bottom:-20px; width:100%; height:50px; background-color:black; font-color:white;">
+<body style="margin:0px 5px 0px 5px;">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="position:fixed; width:100%; height:50px; background-color:black; font-color:white;">
 <div class="container-fluid">
 <div class="navbar-brand">
 	<footer>

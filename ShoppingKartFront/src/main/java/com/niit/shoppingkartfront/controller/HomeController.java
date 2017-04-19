@@ -20,15 +20,18 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String homePage(Model model){
+		
 		List<Product> productList = productDAO.list();
 		model.addAttribute("productList", productList);
-		
+
 		return "home";
 	}
 	
 	@RequestMapping("home")
-	public String homePages(){
-		
+	public String homePages(Model model){
+		List<Product> productList = productDAO.list();
+		model.addAttribute("productList", productList);
+
 		return "home";
 	}
 	

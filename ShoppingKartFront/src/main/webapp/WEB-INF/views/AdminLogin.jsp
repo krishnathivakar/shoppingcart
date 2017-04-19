@@ -37,7 +37,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="ViewSupplier">View</a></li>
 						<li><a href="SupplierPage">Add</a></li>
-					<li><a href="adminCart">Cart</a> </li>
+					
 			</ul></li></div>
 			<div style="float: left; margin-left: 7em;">
 			<li><a href="adminCart">Cart</a> </li>

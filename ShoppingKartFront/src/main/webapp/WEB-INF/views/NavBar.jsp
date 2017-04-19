@@ -14,7 +14,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="margin:0px 5px 0px 5px;">
 <h3>
 <marquee width="30%">
 <c:if test="${pageContext.request.userPrincipal.name != null }">
