@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.ShoppingCartBackend.DAO.AccountDAO;
+import com.niit.ShoppingCartBackend.DAO.AccountDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.BillingaddressDAO;
 import com.niit.ShoppingCartBackend.DAO.BillingaddressDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.CartDAO;
@@ -32,6 +34,7 @@ import com.niit.ShoppingCartBackend.DAO.UserDAO;
 import com.niit.ShoppingCartBackend.DAO.UserDAOImpl;
 import com.niit.ShoppingCartBackend.DAO.WishlistDAO;
 import com.niit.ShoppingCartBackend.DAO.WishlistDAOImpl;
+import com.niit.ShoppingCartBackend.Model.Account;
 import com.niit.ShoppingCartBackend.Model.Billingaddress;
 import com.niit.ShoppingCartBackend.Model.Cart;
 import com.niit.ShoppingCartBackend.Model.Category;
@@ -78,6 +81,7 @@ public class ApplicationContextConfig {
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
+		sessionBuilder.addAnnotatedClass(Account.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
@@ -97,6 +101,12 @@ public class ApplicationContextConfig {
 		return transactionManager;
 	}
 
+	@Autowired(required = true)
+	@Bean(name = "AccountDAO")
+	public AccountDAO getAccountDAO(SessionFactory sessionFactory) {
+		return new AccountDAOImpl(sessionFactory);
+	}
+	
 	@Autowired(required = true)
 	@Bean(name = "CategoryDAO")
 	public CategoryDAO getCategoryDAO(SessionFactory sessionFactory) {

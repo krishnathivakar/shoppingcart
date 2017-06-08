@@ -1,4 +1,4 @@
-package com.niit.ShoppingCartBackend.Model;
+ package com.niit.ShoppingCartBackend.Model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
