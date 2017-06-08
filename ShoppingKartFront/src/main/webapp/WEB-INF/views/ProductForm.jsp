@@ -146,6 +146,11 @@
 				<input type="file" class="form-control" placeholder="Upload Image"
 					name="file" id="file"><i class="fa fa-user"></i>
 			</div>
+			
+			<div class="form-group ">
+				<input type="file" class="form-control" placeholder="Upload Image"
+					name="file1" id="file1"><i class="fa fa-user"></i>
+			</div>
 
 			<button type="submit" class="log-btn" value="AddNewProduct">Submit!</button>
 

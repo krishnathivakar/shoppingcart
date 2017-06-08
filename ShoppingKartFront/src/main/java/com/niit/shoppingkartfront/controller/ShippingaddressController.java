@@ -103,4 +103,9 @@ public class ShippingaddressController {
 		
 	}
 	
+	@ModelAttribute
+	public void commonToUser(Model model){
+		model.addAttribute("UserLoggedIn", "true");
+	}
+	
 }

@@ -21,14 +21,16 @@ function goBack() {
 </script>
 
 <body>
+<button type="submit" class="log-btn" onclick="goBack()" float="left">Go Back</button>
+
 <c:if test="${pageContext.request.userPrincipal.name != null }">
-<button type="submit" class="log-btn" ><a href="proceed" float:right" >Proceed to Delivery</a></button>
+<button type="submit" class="log-btn" float:right"  ><a href="proceed" >Proceed to Delivery</a></button>
 </c:if>
 <c:if test="${pageContext.request.userPrincipal.name == null }">
-<button type="submit" class="log-btn" ><a href="LoginPage" float="right">Proceed to Delivery</a></button>
+<button type="submit" class="log-btn" float:right" ><a href="LoginPage" float="right">Proceed to Delivery</a></button>
 </c:if>
 
-<button type="submit" class="log-btn" onclick="goBack()" float="left">Go Back</button>
+
 
 <div class="container">
 <div class="login-form">

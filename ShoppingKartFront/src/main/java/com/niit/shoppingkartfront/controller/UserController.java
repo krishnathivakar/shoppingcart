@@ -96,7 +96,7 @@ public class UserController {
 			
 			List<Product> productList = productDAO.list();
 			model.addAttribute("productList", productList);
-
+			model.addAttribute("UserLoggedIn", "true");
 			
 			return "UserLogin";
 		}
@@ -105,4 +105,6 @@ public class UserController {
 		return "LoginForm";
 		}
 	}
+	
+	
 }

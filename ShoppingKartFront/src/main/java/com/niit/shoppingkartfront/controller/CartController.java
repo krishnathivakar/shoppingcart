@@ -7,6 +7,7 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -137,4 +138,9 @@ public class CartController {
 		cartDAO.deleteByCartId(cartId);
 		return "redirect:myCart";
 	}
+	@ModelAttribute
+	public void commonToUser(Model model){
+		model.addAttribute("UserLoggedIn", "true");
+	}
+	
 }

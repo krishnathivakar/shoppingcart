@@ -43,7 +43,7 @@ public class ProductController {
 
 	
 	@RequestMapping("addproduct")
-	public String addProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file ) {
+	public String addProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file, @RequestParam("file1") MultipartFile file1) {
 		productDAO.save(product);
 		String path = "F://Eclipsse Project/project/copied project/ShoppingKartFront/src/main/webapp/WEB-INF/resources/images/productImages/";
 		FileUtil.upload(path, file, product.getProductId()+".jpg");

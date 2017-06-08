@@ -71,21 +71,6 @@ margin: 3px 3px 30px 3px ;
 			
 		</div><!-- /container -->
 
-<%-- <c:forEach items="${productList}" var="product">
-<div class="img"	style=" margin-left: 7em;">
-<a href="ProductDetails?productId=${product.productId}">
-<div class="container">
-	
-  <img src="resources/images/productImages/${product.productId}.jpg" style="height:250px;width:250px" alt="" class="">
-  <div class="overlay">
-    <div class="text"><h4>Name : ${product.productName }</h4>
-<h6>Price : ${product.productPrice }</h6></div>
-  </div>
-</div>
-</a>
-</div>
-</c:forEach>
- --%>
 
 </body>
 </html>

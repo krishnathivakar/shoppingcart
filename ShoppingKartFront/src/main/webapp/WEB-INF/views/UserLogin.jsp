@@ -31,8 +31,15 @@
 <%@include file="/WEB-INF/views/ShippingAddress.jsp"%>
 </c:when>
 <c:when test="${not empty Successfully }">
-<%@include file="/WEB-INF/views/SuccessMessage.jsp"%>
+<%@include file="/WEB-INF/views/Payment.jsp"%>
 </c:when>
+<c:when test="${not empty addCodClicked }">
+<%@include file="/WEB-INF/views/Cod.jsp"%>
+</c:when>
+<c:when test="${not empty addCcClicked }">
+<%@include file="/WEB-INF/views/CreditCard.jsp"%>
+</c:when>
+
 <c:otherwise>
 <%@include file="/WEB-INF/views/ListedProducts.jsp"%>
 </c:otherwise>

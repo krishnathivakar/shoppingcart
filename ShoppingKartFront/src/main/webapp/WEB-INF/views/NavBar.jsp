@@ -52,7 +52,11 @@
 					
 			</c:if>
 			<c:if test="${pageContext.request.userPrincipal.name != null }">
+			
+			<c:if test="${UserLoggedIn == 'true'}">
 			<li><a href="myCart">My Cart</a></li>
+			</c:if>
+			
 			<li><a href="j_spring_security_logout"><span
 					class="glyphicon glyphicon-user"></span> LogOut</a></li>
 			</c:if>
