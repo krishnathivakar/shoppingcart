@@ -5,27 +5,55 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>
-<body>
 
+
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+table.hovertable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.hovertable th {
+	background-color:#c3dde0;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.hovertable tr {
+	background-color:#d4e3e5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+</style>
+</head>
+
+<!-- Table goes in the document BODY -->
+<body>
 <div class="login-form">
-			<h1>Product Added To Cart</h1>
+<h1>Purchased Product Details</h1>
 <div style="float: left; margin-left: 5em;">
-<table  style="margin-left: 5em">
-<thead>
+<table class="hovertable">
 <tr>
-<td>Serial no</td>
-<td>Image Of Product</td>
-<td>productname</td>
-<td>quantity</td>
-<td>productPrice</td>
-<td>total</td>
-<td>User Name</td>
-<td>User ID</td>
-<td>Product Id </td>
-<td> Date </td>
+	<th>Serial no</th>
+<th>Image Of Product</th>
+<th>productname</th>
+<th>quantity</th>
+<th>productPrice</th>
+<th>total</th>
+<th>User Name</th>
+<th>User ID</th>
+<th>Product Id </th>
+<th> Date </th>
 </tr>
-</thead>
 <c:forEach items="${cartList}" var="cart" varStatus="status">
 <tr>
 <td>${status.count}</td>
@@ -39,21 +67,20 @@
 <td>${cart.productId }</td>
 <td>${cart.addDate }</td>
 </tr>
-</c:forEach></div>
-
+</c:forEach>
 
 </table>
-<br>
+<br/>
+
+
 <center>
-
-<button type="submit" class="log-btn" ><a href="#">Ok</a></button>
-
+<button type="submit" class="log-btn" ><a href="#">Okay</a></button>
 </center>
 
 
 </div>
 
-
-
+<br><br><br/><br><br><br/>
+</div>
 </body>
 </html>

@@ -40,8 +40,7 @@ margin: 3px 3px 30px 3px ;
 			<!-- Top Navigation -->
 			
 			<header class="codrops-header">
-				<h1>List Of Products</h1>
-				
+				<h1>List Of Products</h1>	
 			</header>
 			<section class="demo-2">
 			<c:forEach items="${productList}" var="product">

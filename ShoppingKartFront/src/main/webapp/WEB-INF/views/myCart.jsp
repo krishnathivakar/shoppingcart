@@ -59,7 +59,7 @@ function goBack() {
 <td><a href="deleteCart?cartId=${cart.cartId}">Delete</a></td>
 
 </tr>
-</c:forEach></div>
+</c:forEach>
 
 <tr scope="row">
 <td></td>

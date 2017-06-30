@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<br>
+	<br>
 	<%@include file="/WEB-INF/views/NavBar.jsp"%>
 
 	<br>
@@ -16,34 +16,39 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<ul class="nav navbar-nav"> -->
-			<div class="row">
-			<ul style="list-style: none;"><div style="float: left; margin-left: 7em;">
-	<li class="dropdown"><a class="dropdown-toggle"
+	<div class="row">
+		<ul style="list-style: none;">
+			<div style="float: left; margin-left: 7em;">
+				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Product<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="ViewProduct">View</a></li>
 						<li><a href="productPage">Add</a></li>
-					</ul></li></div>
+					</ul></li>
+			</div>
 			<div style="float: left; margin-left: 7em;">
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="ViewCategory">View</a></li>
 						<li><a href="categoryPage">Add</a></li>
-					</ul></li></div>
+					</ul></li>
+			</div>
 			<div style="float: left; margin-left: 7em;">
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Supplier<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="ViewSupplier">View</a></li>
 						<li><a href="SupplierPage">Add</a></li>
-					
-			</ul></li></div>
-			<div style="float: left; margin-left: 7em;">
-			<li><a href="adminCart">Cart</a> </li>
+
+					</ul></li>
 			</div>
-			</div></ul>
-		<!-- </div>
+			<div style="float: left; margin-left: 7em;">
+				<li><a href="adminCart">Cart</a></li>
+			</div>
+	</div>
+	</ul>
+	<!-- </div>
 	</div>
 	</nav> -->
 	<hr>
@@ -83,13 +88,16 @@
 		<c:when test="${not empty editSupplierClicked }">
 			<%@include file="/WEB-INF/views/EditSupplier.jsp"%>
 		</c:when>
-<c:when test="${not empty adminCartClicked }">
+		<c:when test="${not empty adminCartClicked }">
 			<%@include file="/WEB-INF/views/adminCart.jsp"%>
 		</c:when>
 		<c:otherwise>
-  </c:otherwise>
+		<center><h2> <br/><br/><br/><br/> Welcome Admin <B> ${pageContext.request.userPrincipal.name}</B></h2></center>
+		</c:otherwise>
 
 	</c:choose>
-		<%@include file="/WEB-INF/views/footer.jsp"%>
+
+
+	<%@include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>
