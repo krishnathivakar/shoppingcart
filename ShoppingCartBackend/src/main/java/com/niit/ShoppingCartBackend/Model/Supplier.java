@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 	@Id
 	@GeneratedValue
-	private String supplierId;
+	private String supplierId; 
 	
 	private String supplierName;
 	
